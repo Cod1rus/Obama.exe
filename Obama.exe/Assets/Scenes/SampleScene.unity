@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 391092827}
   - component: {fileID: 391092826}
   - component: {fileID: 391092825}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2770,9 +2770,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 2069400753}
   GroundCheck: {fileID: 389932484}
-  jumpHeight: 3
+  jumpHeight: 2
   speed: 12
-  gravity: -8.81
+  gravity: -17.62
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
