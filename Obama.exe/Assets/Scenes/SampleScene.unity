@@ -2770,12 +2770,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 2069400753}
   GroundCheck: {fileID: 389932484}
+  jumpHeight: 3
   speed: 12
-  gravity: -3.27
+  gravity: -8.81
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!136 &2069400751
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2798,7 +2799,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069400749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: -21}
+  m_LocalPosition: {x: 1, y: 1.257, z: -21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 74943765}
