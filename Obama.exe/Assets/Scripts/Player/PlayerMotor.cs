@@ -60,7 +60,12 @@ public class PlayerMotor : MonoBehaviour
         }
     }
 
-
+    public void PerformJump(float _Jumpheight)
+    {
+        Vector3 temp = Vector3.zero;
+        temp.y = _Jumpheight;
+        rb.AddForce(temp ,ForceMode.Impulse);
+    }
 
 
 

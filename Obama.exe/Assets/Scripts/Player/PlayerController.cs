@@ -12,47 +12,40 @@ public class PlayerController : MonoBehaviour
     private float MouseSensitivity = 200;
     [SerializeField]
     private float JumpHeight = 4;
+    [SerializeField]
+    private Rigidbody rb;
 
     private PlayerMotor Motor;
+    
+
+    private float distToGround;
+    Collider _collider;
 
     private void Start()
     {
         Motor = GetComponent<PlayerMotor>();
-
+        //rb.GetComponent<Rigidbody>();
+        transform.GetComponent<Transform>();
+        _collider = GetComponentInChildren<CapsuleCollider>();
+        distToGround = _collider.bounds.extents.y;
     }
 
     private void Update()
     {
         float _xMove = Input.GetAxisRaw("Horizontal");
         float _zMove = Input.GetAxisRaw("Vertical");
-        float _jumpMove = Input.GetAxisRaw("Jump"); ;
-
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    _jumpMove = 1;
-        //}
+        //float _jumpMove = Input.GetAxisRaw("Jump"); ;
         
 
         Vector3 _movHorizontal = transform.right * _xMove;
         Vector3 _movVertical = transform.forward * _zMove;
         Vector3 _velocity = Vector3.zero;
-        //if (_velocity.y == 0f)
-        //{
-        Vector3 _movJump = new Vector3(0f, _jumpMove * JumpHeight, 0f);
+
+        //Vector3 _movJump = new Vector3(0f, _jumpMove * JumpHeight, 0f);
         _velocity = (_movHorizontal + _movVertical).normalized * speed;
-        _velocity = (_velocity + _movJump);
-        Motor.Move(_velocity);
-        //}
-        //else
-        //{
-        //    _velocity = (_movHorizontal + _movVertical).normalized * speed;
-        //    Motor.Move(_velocity);
-        //}
-
-
-
-        //Vector3 _velocity = (_movHorizontal + _movVertical).normalized * speed;
         //_velocity = (_velocity + _movJump);
+        Motor.Move(_velocity);
+
 
 
 
@@ -70,9 +63,17 @@ public class PlayerController : MonoBehaviour
 
         Motor.RotateCamera(_cameraRotation);
 
-
-
+        if (Input.GetButtonDown("Jump") && IsGrounded())
+        {
+           
+            Motor.PerformJump(JumpHeight);
+            
+        }
     }
 
+    bool IsGrounded()
+    {
+        return Physics.Raycast(rb.position, -Vector3.up, distToGround +0,1 );
+    }
 
 }
