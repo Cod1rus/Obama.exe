@@ -286,7 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   MouseSensitivity: 10
-  JumpHeight: 10
+  JumpHeight: 20
 --- !u!114 &2549234496953870311
 MonoBehaviour:
   m_ObjectHideFlags: 0

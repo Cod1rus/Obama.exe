@@ -25,17 +25,36 @@ public class PlayerController : MonoBehaviour
     {
         float _xMove = Input.GetAxisRaw("Horizontal");
         float _zMove = Input.GetAxisRaw("Vertical");
-        float _jumpMove = Input.GetAxisRaw("Jump");
+        float _jumpMove = Input.GetAxisRaw("Jump"); ;
 
+        //if (Input.GetButtonDown("Jump"))
+        //{
+        //    _jumpMove = 1;
+        //}
+        
 
         Vector3 _movHorizontal = transform.right * _xMove;
         Vector3 _movVertical = transform.forward * _zMove;
+        Vector3 _velocity = Vector3.zero;
+        //if (_velocity.y == 0f)
+        //{
         Vector3 _movJump = new Vector3(0f, _jumpMove * JumpHeight, 0f);
-
-        Vector3 _velocity = (_movHorizontal + _movVertical).normalized * speed;
+        _velocity = (_movHorizontal + _movVertical).normalized * speed;
         _velocity = (_velocity + _movJump);
-
         Motor.Move(_velocity);
+        //}
+        //else
+        //{
+        //    _velocity = (_movHorizontal + _movVertical).normalized * speed;
+        //    Motor.Move(_velocity);
+        //}
+
+
+
+        //Vector3 _velocity = (_movHorizontal + _movVertical).normalized * speed;
+        //_velocity = (_velocity + _movJump);
+
+
 
         float _yRot = Input.GetAxisRaw("Mouse X");
 
@@ -54,4 +73,6 @@ public class PlayerController : MonoBehaviour
 
 
     }
+
+
 }
