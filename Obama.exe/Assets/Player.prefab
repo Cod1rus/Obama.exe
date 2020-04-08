@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6039459346955998240}
   - component: {fileID: 7893964405471728078}
   - component: {fileID: 5871027048284984677}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 4655445531534283979}
   - component: {fileID: 4138897534823380183}
   - component: {fileID: 1719030834689627859}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 3D Modell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 487891700529073858}
   - component: {fileID: 2973735573906403797}
   - component: {fileID: 1656289391354138094}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,9 +232,10 @@ GameObject:
   - component: {fileID: 8941352384859829412}
   - component: {fileID: -4346536466710392646}
   - component: {fileID: 2763999324816567261}
-  m_Layer: 0
+  - component: {fileID: 4602683143155153845}
+  m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -318,6 +319,8 @@ MonoBehaviour:
   - {fileID: 2549234496953870311}
   - {fileID: 2973735573906403797}
   - {fileID: 1656289391354138094}
+  - {fileID: 4602683143155153845}
+  remoteLayername: RemotePlayer
 --- !u!114 &8941352384859829412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,3 +396,23 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
   m_InterpolateMovement: 0
+--- !u!114 &4602683143155153845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7046695050517912131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3c295bc540c0648b15a7ec30417c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon:
+    name: Wristbreaker
+    damage: 10
+    range: 200
+  PlayerCamera: {fileID: 2973735573906403797}
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295

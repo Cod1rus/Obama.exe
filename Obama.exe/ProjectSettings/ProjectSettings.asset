@@ -664,10 +664,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: c3c7f123-dc69-48b0-bde7-fdb899768b75
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Obama.exe
+  organizationId: yeetosoft
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
