@@ -3,6 +3,7 @@ using UnityEngine.Networking;
 
 public class PlayerShoot : NetworkBehaviour
 {
+    [SerializeField]
     private const string PLAYER_TAG = "Player";
     public PlayerWeapon weapon;
 
@@ -40,15 +41,20 @@ public class PlayerShoot : NetworkBehaviour
         {
             if (_hit.collider.tag == PLAYER_TAG)
             {
-                CmdPlayerShot(_hit.collider.name);
+                CmdPlayerShot(_hit.collider.name, weapon.damage);
             }
             
         }
     }
 
     [Command]
-    void CmdPlayerShot(string _ID)
+    void CmdPlayerShot(string _PlayerID, int _damage)
     {
-        Debug.Log(_ID + "Got his face ripped");
+        //Debug.Log(_PlayerID + "Got his face ripped");
+
+        Player _player = GameManager.getPlayer(_PlayerID);
+        _player.TakeDamage(_damage);
+
+        
     }
 }
