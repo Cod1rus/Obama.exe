@@ -50,7 +50,7 @@ public class PlayerShoot : NetworkBehaviour
     [Command]
     void CmdPlayerShot(string _PlayerID, int _damage)
     {
-        //Debug.Log(_PlayerID + "Got his face ripped");
+        Debug.Log(_PlayerID + "Got his face ripped");
 
         Player _player = GameManager.getPlayer(_PlayerID);
         _player.TakeDamage(_damage);

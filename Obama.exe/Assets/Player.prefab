@@ -321,7 +321,6 @@ MonoBehaviour:
   - {fileID: 2973735573906403797}
   - {fileID: 1656289391354138094}
   - {fileID: 4602683143155153845}
-  - {fileID: 4692323647151333488}
   remoteLayername: RemotePlayer
 --- !u!114 &8941352384859829412
 MonoBehaviour:
@@ -430,4 +429,4 @@ MonoBehaviour:
   PlayerCamera: {fileID: 2973735573906403797}
   mask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 4294967295
