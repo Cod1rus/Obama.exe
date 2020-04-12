@@ -62,9 +62,11 @@ public class PlayerSetup : NetworkBehaviour
         {
             sceneCamera.gameObject.SetActive(true);
         }
-
         GameManager.DeRegisterPlayer(transform.name);
-
-       
     }
+    //private void OnDestroy()
+    //{
+    //    GameManager.DeRegisterPlayer(transform.name);
+
+    //}
 }

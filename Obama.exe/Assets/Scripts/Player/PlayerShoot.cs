@@ -37,13 +37,16 @@ public class PlayerShoot : NetworkBehaviour
     void Shoot()
     {
         RaycastHit _hit;
+        Debug.Log("We shot! (on client)");
+        
         if (Physics.Raycast(PlayerCamera.transform.position, PlayerCamera.transform.forward, out _hit, weapon.range, mask))
-        {
+        {            
+            Debug.Log("We did a Raycast! (on client) we hit: " + _hit.collider.name);
             if (_hit.collider.tag == PLAYER_TAG)
             {
-                CmdPlayerShot(_hit.collider.name, weapon.damage);
-            }
-            
+                Debug.Log("We hit a Player (on client)");
+                CmdPlayerShot(_hit.collider.name, weapon.damage); 
+            } 
         }
     }
 
@@ -54,7 +57,6 @@ public class PlayerShoot : NetworkBehaviour
 
         Player _player = GameManager.getPlayer(_PlayerID);
         _player.TakeDamage(_damage);
-
-        
+      
     }
 }
