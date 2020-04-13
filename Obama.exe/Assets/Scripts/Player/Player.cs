@@ -22,7 +22,7 @@ public class Player : NetworkBehaviour
     public void TakeDamage(int _amount)
     {
         currentHealth -= _amount;
-        Debug.Log(transform.name + "now has " + currentHealth + " health!");
+        Debug.Log(transform.name + " now has " + currentHealth + " health!");
     }
 
 }
