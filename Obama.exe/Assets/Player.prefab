@@ -342,7 +342,7 @@ MonoBehaviour:
   PlayerCamera: {fileID: 2973735573906403797}
   mask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1335
 --- !u!1 &7087211337784745746
 GameObject:
   m_ObjectHideFlags: 0
