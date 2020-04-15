@@ -37,6 +37,19 @@ public class Player : NetworkBehaviour
         SetDefaults();
     }
 
+    private void Update()
+    {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            RpcTakeDamage(999999);
+        }
+
+    }
+
 
 
     [ClientRpc]
@@ -50,6 +63,7 @@ public class Player : NetworkBehaviour
         Debug.Log(transform.name + " now has " + currentHealth + " health!");
 
         if (currentHealth <= 0){
+            Debug.Log(transform.name + " has Died!!");
             Die();
         }
     }
