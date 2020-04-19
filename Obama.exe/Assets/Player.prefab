@@ -341,7 +341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon:
     name: Wristbreaker
-    damage: 50
+    damage: 10
     range: 200
   PlayerCamera: {fileID: 2973735573906403797}
   mask:

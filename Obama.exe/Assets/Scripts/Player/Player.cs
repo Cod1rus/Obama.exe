@@ -38,6 +38,7 @@ public class Player : NetworkBehaviour
         SetDefaults();
     }
 
+<<<<<<< HEAD
     //private void Update()
     //{
     //    if (!isLocalPlayer)
@@ -51,6 +52,8 @@ public class Player : NetworkBehaviour
 
     //}
 
+=======
+>>>>>>> parent of 98a088d... Testet the yesterday implemented features
 
 
     [ClientRpc]
@@ -64,7 +67,6 @@ public class Player : NetworkBehaviour
         Debug.Log(transform.name + " now has " + currentHealth + " health!");
 
         if (currentHealth <= 0){
-            Debug.Log(transform.name + " has Died!!");
             Die();
         }
     }
