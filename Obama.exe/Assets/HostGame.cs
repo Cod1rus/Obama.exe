@@ -7,9 +7,11 @@ public class HostGame : MonoBehaviour
     [SerializeField]
     private uint roomsize = 2;
 
-    private string roomName;
+    private string  roomName;
 
     private NetworkManager networkManager;
+
+
 
     private void Start()
     {
@@ -34,7 +36,6 @@ public class HostGame : MonoBehaviour
 
             //create Room
             networkManager.matchMaker.CreateMatch(roomName, roomsize, true, "" /*passwort*/ , ""/*publicClientAddress*/, ""/*privateClientAddress*/, 0/*eloScoreForMatch*/, 0/*requestDomain*/, networkManager.OnMatchCreate /*callback*/);
-            
         }
     }
 
