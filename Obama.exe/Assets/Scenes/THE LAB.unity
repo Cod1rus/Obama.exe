@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 573498726}
   - component: {fileID: 573498727}
   - component: {fileID: 573498728}
+  - component: {fileID: 573498729}
   m_Layer: 0
   m_Name: _Networkmanager
   m_TagString: Untagged
@@ -345,7 +346,7 @@ MonoBehaviour:
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
   m_LogLevel: 2
-  m_PlayerPrefab: {fileID: 7046695050517912131, guid: 0a54687bdebc9a54e9d89e59c41d7d0d,
+  m_PlayerPrefab: {fileID: 1842788887261175576, guid: 0a54687bdebc9a54e9d89e59c41d7d0d,
     type: 3}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 1
@@ -423,6 +424,19 @@ MonoBehaviour:
   showGUI: 1
   offsetX: 0
   offsetY: 0
+--- !u!114 &573498729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573498725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dbab6ea8386774a8666cdd2bea948b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomsize: 2
 --- !u!1 &785272089 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 388f55aa7f069684ab8561c15a636d5a,
