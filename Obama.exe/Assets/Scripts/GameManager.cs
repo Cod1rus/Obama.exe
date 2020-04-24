@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 
     public MatchSettings matchSettings;
 
+
+
     private void Awake()
     {
         if (instance != null)
@@ -19,6 +21,10 @@ public class GameManager : MonoBehaviour
             Debug.Log("Gamemanager Initalisiert!");
             instance = this;
         }
+
+
+
+        
     }
 
     #region Player tracking

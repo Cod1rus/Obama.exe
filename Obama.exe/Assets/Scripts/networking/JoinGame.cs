@@ -15,6 +15,8 @@ public class JoinGame : MonoBehaviour
     private GameObject roomListItemPrefab;
     [SerializeField]
     private Transform roomListParent;
+    [SerializeField]
+    ServerBrowserUI serverBrowserUI;
 
 
     private void Start()
@@ -37,7 +39,7 @@ public class JoinGame : MonoBehaviour
     public void OnMatchList(bool success, string extendedInfo, List<MatchInfoSnapshot> matches)
     {
         status.text = "";
-        if (matches == null)
+        if (!success || matches == null)
         {
             status.text = "Couldn't get room list";
             return;
@@ -79,5 +81,7 @@ public class JoinGame : MonoBehaviour
         networkManager.matchMaker.JoinMatch(_match.networkId, "", "", "", 0, 0, networkManager.OnMatchJoined);
         ClearRoomList();
         status.text = "Joining...";
+
+        serverBrowserUI.ToggleServerBrowserUI(false);
     }
 }

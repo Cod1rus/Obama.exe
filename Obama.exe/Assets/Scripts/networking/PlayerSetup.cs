@@ -11,7 +11,6 @@ public class PlayerSetup : NetworkBehaviour
     string remoteLayername = "RemotePlayer";
 
 
-
     Camera sceneCamera;
 
     void Start()
@@ -32,16 +31,21 @@ public class PlayerSetup : NetworkBehaviour
         }
 
         GetComponent<Player>().Setup();
+
+        
     }
 
     public override void OnStartClient()
     {
         base.OnStartClient();
 
+
         string _netID = GetComponent<NetworkIdentity>().netId.ToString();
         Player _player = GetComponent<Player>();
 
         GameManager.RegisterPlayer(_netID, _player);
+
+        
     }
 
     void DisableComponents()
@@ -64,5 +68,6 @@ public class PlayerSetup : NetworkBehaviour
             sceneCamera.gameObject.SetActive(true);
         }
         GameManager.DeRegisterPlayer(transform.name);
+       
     }
 }

@@ -32,6 +32,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.IsOn)
+        {
+            return;
+        }
+
         float _xMove = Input.GetAxisRaw("Horizontal");
         float _zMove = Input.GetAxisRaw("Vertical");
         //float _jumpMove = Input.GetAxisRaw("Jump"); ;
