@@ -9,17 +9,17 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Debug.LogError("More than one game manager in scene");
+            return;
         }
         else
         {
+            Debug.Log("Gamemanager Initalisiert!");
             instance = this;
         }
-
     }
-
 
     #region Player tracking
 

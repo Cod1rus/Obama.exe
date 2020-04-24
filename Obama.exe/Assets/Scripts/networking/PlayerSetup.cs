@@ -65,9 +65,4 @@ public class PlayerSetup : NetworkBehaviour
         }
         GameManager.DeRegisterPlayer(transform.name);
     }
-    //private void OnDestroy()
-    //{
-    //    GameManager.DeRegisterPlayer(transform.name);
-
-    //}
 }

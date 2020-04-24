@@ -32,11 +32,10 @@ public class HostGame : MonoBehaviour
     {
         if (roomName != "" && roomName != null)
         {
-            Debug.Log("Creating Room: " +roomName +" with Room for: " + roomsize + " Dudes!");
+            Debug.Log("Creating Room: " + roomName +" with Room for: " + roomsize + " Dudes!");
 
             //create Room
             networkManager.matchMaker.CreateMatch(roomName, roomsize, true, "" /*passwort*/ , ""/*publicClientAddress*/, ""/*privateClientAddress*/, 0/*eloScoreForMatch*/, 0/*requestDomain*/, networkManager.OnMatchCreate /*callback*/);
         }
     }
-
 }

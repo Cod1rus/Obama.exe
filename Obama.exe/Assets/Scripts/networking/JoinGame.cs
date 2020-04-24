@@ -11,6 +11,10 @@ public class JoinGame : MonoBehaviour
 
     [SerializeField]
     private Text status;
+    [SerializeField]
+    private GameObject roomListItemPrefab;
+    [SerializeField]
+    private Transform roomListParent;
 
 
     private void Start()
@@ -25,6 +29,7 @@ public class JoinGame : MonoBehaviour
 
     public void RefreshRoomlList()
     {
+        ClearRoomList();
         networkManager.matchMaker.ListMatches(0, 20, "", false, 0, 0, OnMatchList);
         status.text = "Loading...";
     }
@@ -38,9 +43,24 @@ public class JoinGame : MonoBehaviour
             return;
         }
 
-        //foreach (MatchInfoSnapshot match in matches)
-        //{
-        //}
+        foreach (MatchInfoSnapshot match in matches)
+        {
+            GameObject _roomListItemGO = Instantiate(roomListItemPrefab);
+            _roomListItemGO.transform.SetParent(roomListParent);
+
+            RoomListItem _rooListItem = _roomListItemGO.GetComponent<RoomListItem>();
+            if (_rooListItem != null)
+            {
+                _rooListItem.Setup(match, JoinRoom);
+            }
+
+            roomList.Add(_roomListItemGO);
+        }
+
+        if (roomList.Count == 0)
+        {
+            status.text = "No one wants to play!"; //keine Räume im moment vorhanden
+        }
     }
 
     void ClearRoomList()
@@ -49,5 +69,15 @@ public class JoinGame : MonoBehaviour
         {
             Destroy(roomList[i]);
         }
+
+        roomList.Clear();
+    }
+
+    public void JoinRoom(MatchInfoSnapshot _match)
+    {
+        Debug.Log("Joining " + _match.name);
+        networkManager.matchMaker.JoinMatch(_match.networkId, "", "", "", 0, 0, networkManager.OnMatchJoined);
+        ClearRoomList();
+        status.text = "Joining...";
     }
 }
