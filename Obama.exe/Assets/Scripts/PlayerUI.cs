@@ -6,6 +6,8 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]
     GameObject pauseMenu;
 
+    [SerializeField]
+    GameObject crosshair;
 
     private void Start()
     {
@@ -17,11 +19,17 @@ public class PlayerUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePauseMenu();
+            ToggleCrosshair();
         }
     }
     void TogglePauseMenu()
     {
         pauseMenu.SetActive(!pauseMenu.activeSelf);
         PauseMenu.IsOn = pauseMenu.activeSelf;
+    }
+
+    void ToggleCrosshair()
+    {
+        crosshair.SetActive(!crosshair.activeSelf);       
     }
 }

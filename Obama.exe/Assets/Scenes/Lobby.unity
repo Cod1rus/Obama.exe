@@ -1026,6 +1026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsize: 2
+  serverBrowserUI: {fileID: 1613729928}
 --- !u!114 &523634331
 MonoBehaviour:
   m_ObjectHideFlags: 0
