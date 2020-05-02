@@ -4,6 +4,8 @@ using UnityEngine.Networking.Match;
 
 public class PauseMenu : MonoBehaviour
 {
+    
+
     public static bool IsOn = false;
 
 
@@ -19,5 +21,6 @@ public class PauseMenu : MonoBehaviour
         MatchInfo matchInfo = networkManager.matchInfo;
         networkManager.matchMaker.DropConnection(matchInfo.networkId, matchInfo.nodeId, 0, networkManager.OnDropConnection);
         networkManager.OnStopHost();
+
     }
 }

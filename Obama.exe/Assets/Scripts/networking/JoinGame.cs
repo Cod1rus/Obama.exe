@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine.Networking.Match;
 
+
 public class JoinGame : MonoBehaviour
 {
     private NetworkManager networkManager;
@@ -18,6 +19,7 @@ public class JoinGame : MonoBehaviour
     [SerializeField]
     ServerBrowserUI serverBrowserUI;
 
+    private GameManager gameManager;
 
     private void Start()
     {
@@ -82,6 +84,11 @@ public class JoinGame : MonoBehaviour
         ClearRoomList();
         status.text = "Joining...";
 
+
         serverBrowserUI.ToggleServerBrowserUI(false);
+
+        gameManager.EnterLobbyScene();
     }
+
+
 }

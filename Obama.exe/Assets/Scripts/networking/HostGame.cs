@@ -6,13 +6,14 @@ public class HostGame : MonoBehaviour
 {
     [SerializeField]
     private uint roomsize = 2;
+    [SerializeField]
+    ServerBrowserUI serverBrowserUI;
 
     private string  roomName;
 
     private NetworkManager networkManager;
 
-    [SerializeField]
-    ServerBrowserUI serverBrowserUI;
+    private GameManager gameManager;
 
     private void Start()
     {
@@ -42,7 +43,7 @@ public class HostGame : MonoBehaviour
             {
                 serverBrowserUI.ToggleServerBrowserUI(false);
             }
-
+            gameManager.EnterLobbyScene();
         }
     }
 }
