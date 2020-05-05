@@ -1100,6 +1100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomsize: 2
   serverBrowserUI: {fileID: 1613729928}
+  lobbyScene: TheLab
 --- !u!114 &523634331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1846,7 +1847,8 @@ MonoBehaviour:
   roomListItemPrefab: {fileID: 6806816384691083061, guid: 07000f3db565ac14bbbaaf158d45dce9,
     type: 3}
   roomListParent: {fileID: 107364130}
-  serverBrowserUI: {fileID: 0}
+  serverBrowserUI: {fileID: 1613729928}
+  lobbyScene: TheLab
 --- !u!1 &962200106
 GameObject:
   m_ObjectHideFlags: 0

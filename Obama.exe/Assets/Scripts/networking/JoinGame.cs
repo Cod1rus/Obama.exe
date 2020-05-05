@@ -18,6 +18,8 @@ public class JoinGame : MonoBehaviour
     private Transform roomListParent;
     [SerializeField]
     ServerBrowserUI serverBrowserUI;
+    [SerializeField]
+    private string lobbyScene;
 
     private GameManager gameManager;
 
@@ -85,9 +87,9 @@ public class JoinGame : MonoBehaviour
         status.text = "Joining...";
 
 
-        serverBrowserUI.ToggleServerBrowserUI(false);
+        //serverBrowserUI.ToggleServerBrowserUI(false);
 
-        gameManager.EnterLobbyScene();
+        gameManager.ChangeSceneTo(lobbyScene);
     }
 
 

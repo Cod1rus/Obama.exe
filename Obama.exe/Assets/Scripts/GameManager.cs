@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
 
     public MatchSettings matchSettings;
 
-    
 
+    private SceneManager sceneManager;
     private void Awake()
     {
         if (instance != null)
@@ -26,25 +26,13 @@ public class GameManager : MonoBehaviour
     }
 
 
-
+    //need to fix NullReferenceExeption
     #region LoadScenes
 
-    [SerializeField]
-    private int mainMenuSceneIndex = 0;
-    [SerializeField]
-    private int lobbySceneIndex = 1;
-
-
-    public void EnterLobbyScene()
+    public void ChangeSceneTo(string _scene)
     {
-        Debug.Log("Lobby Entered");
-        SceneManager.LoadScene(lobbySceneIndex);
-    }
-
-    public void EnterMainMenuScene()
-    {
-        Debug.Log("Main Menu Entered");
-        SceneManager.LoadScene(mainMenuSceneIndex);
+        Debug.Log("Changed Scene to " + _scene);
+        SceneManager.LoadScene(_scene);
     }
 
     #endregion

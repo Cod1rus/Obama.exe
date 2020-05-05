@@ -8,6 +8,8 @@ public class HostGame : MonoBehaviour
     private uint roomsize = 2;
     [SerializeField]
     ServerBrowserUI serverBrowserUI;
+    [SerializeField]
+    private string lobbyScene;
 
     private string  roomName;
 
@@ -43,7 +45,7 @@ public class HostGame : MonoBehaviour
             {
                 serverBrowserUI.ToggleServerBrowserUI(false);
             }
-            gameManager.EnterLobbyScene();
+            gameManager.ChangeSceneTo(lobbyScene);
         }
     }
 }
