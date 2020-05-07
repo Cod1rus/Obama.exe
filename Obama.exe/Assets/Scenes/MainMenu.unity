@@ -283,7 +283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 159.95, y: -234.4}
+  m_AnchoredPosition: {x: 159.95, y: -218.7}
   m_SizeDelta: {x: 200, y: 333.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &18664968
@@ -409,7 +409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 159.95, y: -426.09998}
+  m_AnchoredPosition: {x: 159.95, y: -410.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &64684709
@@ -954,7 +954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 159.95, y: -274.335}
+  m_AnchoredPosition: {x: 159.95, y: -208.33499}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &485136611
@@ -1100,6 +1100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomsize: 2
   serverBrowserUI: {fileID: 1613729928}
+  lobbyScene: TheLab
 --- !u!114 &523634331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1354,6 +1355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu: {fileID: 1984585895}
+  serverBrowser: {fileID: 1613729923}
 --- !u!1 &657390774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,7 +1501,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 739542791}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 552847464}
+        m_MethodName: CallOptionsMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &739542791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1570,7 +1583,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 159.95, y: -36.699997}
+  m_AnchoredPosition: {x: 159.95, y: -21}
   m_SizeDelta: {x: 248.9, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &755211929
@@ -1834,7 +1847,8 @@ MonoBehaviour:
   roomListItemPrefab: {fileID: 6806816384691083061, guid: 07000f3db565ac14bbbaaf158d45dce9,
     type: 3}
   roomListParent: {fileID: 107364130}
-  serverBrowserUI: {fileID: 0}
+  serverBrowserUI: {fileID: 1613729928}
+  lobbyScene: TheLab
 --- !u!1 &962200106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2075,7 +2089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 159.95, y: -234.33499}
+  m_AnchoredPosition: {x: 159.95, y: -168.33499}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1239929664
@@ -2438,7 +2452,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1525860691}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 552847464}
+        m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1525860691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2494,7 +2519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1613729924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3003,7 +3028,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 159.95, y: -188.33499}
+  m_AnchoredPosition: {x: 159.95, y: -122.33499}
   m_SizeDelta: {x: 248.9, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1849920903
@@ -3349,7 +3374,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2005900607}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 552847464}
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2005900607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3401,7 +3437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2028845148
 Transform:
   m_ObjectHideFlags: 0

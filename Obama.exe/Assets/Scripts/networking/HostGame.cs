@@ -1,4 +1,4 @@
-﻿
+﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -6,13 +6,16 @@ public class HostGame : MonoBehaviour
 {
     [SerializeField]
     private uint roomsize = 2;
+    [SerializeField]
+    ServerBrowserUI serverBrowserUI;
+    [SerializeField]
+    private string lobbyScene;
 
     private string  roomName;
 
     private NetworkManager networkManager;
 
-    [SerializeField]
-    ServerBrowserUI serverBrowserUI;
+    private GameManager gameManager;
 
     private void Start()
     {
@@ -42,7 +45,10 @@ public class HostGame : MonoBehaviour
             {
                 serverBrowserUI.ToggleServerBrowserUI(false);
             }
+            Debug.Log("Tach:" + lobbyScene);
 
+            SceneManager.CreateScene(lobbyScene);
+            GameManager.ChangeSceneTo(lobbyScene);
         }
     }
 }

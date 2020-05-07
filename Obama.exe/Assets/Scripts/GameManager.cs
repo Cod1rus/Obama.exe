@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class GameManager : MonoBehaviour
     public MatchSettings matchSettings;
 
 
-
+    private SceneManager sceneManager;
     private void Awake()
     {
         if (instance != null)
@@ -21,11 +22,21 @@ public class GameManager : MonoBehaviour
             Debug.Log("Gamemanager Initalisiert!");
             instance = this;
         }
-
-
-
         
     }
+
+
+
+    #region LoadScenes
+
+    public static void ChangeSceneTo(string _scene)
+    {
+        Debug.Log("Changed Scene to " + _scene);
+        SceneManager.LoadScene(_scene);
+    }
+
+    #endregion
+
 
     #region Player tracking
 
