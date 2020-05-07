@@ -437,6 +437,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsize: 2
+  serverBrowserUI: {fileID: 0}
+  lobbyScene: 
 --- !u!1 &785272089 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 388f55aa7f069684ab8561c15a636d5a,
