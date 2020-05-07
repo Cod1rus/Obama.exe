@@ -747,4 +747,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d506759640b63d40a373760c70d3c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuScene: 
+  mainMenuScene: MainMenu

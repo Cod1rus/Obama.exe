@@ -26,10 +26,10 @@ public class GameManager : MonoBehaviour
     }
 
 
-    //need to fix NullReferenceExeption
+
     #region LoadScenes
 
-    public void ChangeSceneTo(string _scene)
+    public static void ChangeSceneTo(string _scene)
     {
         Debug.Log("Changed Scene to " + _scene);
         SceneManager.LoadScene(_scene);

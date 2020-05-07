@@ -89,7 +89,7 @@ public class JoinGame : MonoBehaviour
 
         //serverBrowserUI.ToggleServerBrowserUI(false);
 
-        gameManager.ChangeSceneTo(lobbyScene);
+        GameManager.ChangeSceneTo(lobbyScene);
     }
 
 

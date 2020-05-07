@@ -1,4 +1,4 @@
-﻿
+﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -45,7 +45,10 @@ public class HostGame : MonoBehaviour
             {
                 serverBrowserUI.ToggleServerBrowserUI(false);
             }
-            gameManager.ChangeSceneTo(lobbyScene);
+            Debug.Log("Tach:" + lobbyScene);
+
+            SceneManager.CreateScene(lobbyScene);
+            GameManager.ChangeSceneTo(lobbyScene);
         }
     }
 }
