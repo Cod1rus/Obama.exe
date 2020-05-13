@@ -23,8 +23,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        Motor = GetComponent<PlayerMotor>();
-        //rb.GetComponent<Rigidbody>();
+        Motor = GetComponent<PlayerMotor>();     
         transform.GetComponent<Transform>();
         _collider = GetComponentInChildren<CapsuleCollider>();
         distToGround = _collider.bounds.extents.y;
@@ -39,16 +38,14 @@ public class PlayerController : MonoBehaviour
 
         float _xMove = Input.GetAxisRaw("Horizontal");
         float _zMove = Input.GetAxisRaw("Vertical");
-        //float _jumpMove = Input.GetAxisRaw("Jump"); ;
         
 
         Vector3 _movHorizontal = transform.right * _xMove;
         Vector3 _movVertical = transform.forward * _zMove;
         Vector3 _velocity = Vector3.zero;
 
-        //Vector3 _movJump = new Vector3(0f, _jumpMove * JumpHeight, 0f);
+
         _velocity = (_movHorizontal + _movVertical).normalized * speed;
-        //_velocity = (_velocity + _movJump);
         Motor.Move(_velocity);
 
 

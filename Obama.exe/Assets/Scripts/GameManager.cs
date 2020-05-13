@@ -21,8 +21,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Gamemanager Initalisiert!");
             instance = this;
-        }
-        
+        }        
     }
 
 

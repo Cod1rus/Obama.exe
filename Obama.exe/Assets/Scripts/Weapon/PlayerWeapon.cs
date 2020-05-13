@@ -8,10 +8,10 @@ public class PlayerWeapon
 
     public int damage = 10;
 
-    public float range = 200f;
-    public float recoil = 0f;
-    public float fireRate = 10f;
+    public float range = 100f;
+    public float recoil = 0f; 
+    public float fireRate = 0f; //if 0 = non automatic
 
-    public bool isAutomatic = false;
+    public GameObject weaponGFX;
 
 }
