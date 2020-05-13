@@ -361,7 +361,7 @@ MonoBehaviour:
     range: 200
     recoil: 0
     fireRate: 10
-    weaponGFX: {fileID: 1421956100995690953, guid: a6786e05cff693f4a86cab9d64635099,
+    weaponGFX: {fileID: 8906981282859650332, guid: 3dafbd1c86319d14baba2c9c79f9221d,
       type: 3}
 --- !u!1 &7797482115040154476
 GameObject:
