@@ -12,6 +12,8 @@ public class PlayerShoot : NetworkBehaviour
     private Camera PlayerCamera;
     [SerializeField]
     private LayerMask mask;
+    [SerializeField]
+    private Player player;
 
     private WeaponManager weaponManager;
     private PlayerWeapon currentWeapon;
@@ -67,7 +69,8 @@ public class PlayerShoot : NetworkBehaviour
             if (_hit.collider.tag == PLAYER_TAG)
             {
                 Debug.Log("We hit a Player (on client)");
-                CmdPlayerShot(_hit.collider.name, currentWeapon.damage); 
+                CmdPlayerShot(_hit.collider.name, currentWeapon.damage);
+                player.damageDealt += currentWeapon.damage;
             } 
         }
     }
