@@ -9,6 +9,12 @@ public class WeaponManager : NetworkBehaviour{
     private Transform weaponHolder;
     [SerializeField]
     private PlayerWeapon primaryWeapon;
+    [SerializeField]
+    private PlayerWeapon wirstBreaker;
+    [SerializeField]
+    private PlayerWeapon rpg;
+    [SerializeField]
+    private PlayerWeapon bonkMaster9000;
 
     private PlayerWeapon curretWeapon;
 
