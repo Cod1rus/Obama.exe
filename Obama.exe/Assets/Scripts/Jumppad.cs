@@ -9,14 +9,6 @@ public class Jumppad : MonoBehaviour
     [SerializeField]
     private float JumpForce = 10;
 
-
-    void Start()
-    {
-       
-        
-    }
-
-
     private void OnCollisionEnter(Collision collision)
     {
         Vector3 newvelocity = -collision.contacts[0].normal.normalized * JumpForce;
