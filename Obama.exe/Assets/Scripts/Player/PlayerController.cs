@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+
+    #region Movement
     [SerializeField]
     private float speed = 10f;
     [SerializeField]
@@ -77,5 +79,5 @@ public class PlayerController : MonoBehaviour
     {
         return Physics.Raycast(rb.position, -Vector3.up, distToGround +0,1 );
     }
-
+    #endregion
 }

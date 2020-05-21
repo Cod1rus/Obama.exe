@@ -4,6 +4,14 @@ using System.Collections;
 
 public class Player : NetworkBehaviour
 {
+
+
+    public float damageDealt = 0;
+    private float damageTaken = 0;
+    private float hpRecoverd = 0;
+    private int points = 0;
+
+
     [SyncVar]
     private bool _isDead = false;
 
@@ -62,6 +70,7 @@ public class Player : NetworkBehaviour
 
         currentHealth -= _amount;
         Debug.Log(transform.name + " now has " + currentHealth + " health!");
+        this.damageTaken += _amount;
 
         if (currentHealth <= 0){
             Debug.Log(transform.name + " has Died!!");

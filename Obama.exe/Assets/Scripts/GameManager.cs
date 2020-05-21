@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 
     public MatchSettings matchSettings;
 
-
     private SceneManager sceneManager;
     private void Awake()
     {

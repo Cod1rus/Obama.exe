@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b2811e971a63243a088a74d228b252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageDealt: 0
   maxHealth: 100
   disableOnDeath:
   - {fileID: 989327508722852858}
@@ -342,6 +343,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 1335
+  player: {fileID: 0}
 --- !u!114 &-5340642282931608582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +365,30 @@ MonoBehaviour:
     recoil: 0
     fireRate: 10
     weaponGFX: {fileID: 8906981282859650332, guid: 3dafbd1c86319d14baba2c9c79f9221d,
+      type: 3}
+  wirstBreaker:
+    name: HexaRegret
+    damage: 90
+    range: 100
+    recoil: 0
+    fireRate: 0
+    weaponGFX: {fileID: 5992904429047398551, guid: 0ccec7c2d1aa5e24f8c02d7ef4f4de80,
+      type: 3}
+  rpg:
+    name: Wendler Gun
+    damage: 30
+    range: 400
+    recoil: 0
+    fireRate: 0
+    weaponGFX: {fileID: 839642063759477213, guid: 86380a162f261434b8be1f600403b1a9,
+      type: 3}
+  bonkMaster9000:
+    name: Bonk Master 9000
+    damage: 9000
+    range: 3
+    recoil: 0
+    fireRate: 0
+    weaponGFX: {fileID: 1982892664874929123, guid: 6ebe9ced6260d9847bfd53d21d43fe39,
       type: 3}
 --- !u!1 &3608970629661800305
 GameObject:
