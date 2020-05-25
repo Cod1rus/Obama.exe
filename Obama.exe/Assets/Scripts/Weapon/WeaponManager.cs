@@ -15,6 +15,10 @@ public class WeaponManager : NetworkBehaviour{
     private PlayerWeapon rpg;
     [SerializeField]
     private PlayerWeapon bonkMaster9000;
+    [SerializeField]
+    private PlayerWeapon schwererGustav;
+    [SerializeField]
+    PlayerWeapon automaticSniperRifle;
 
     private PlayerWeapon curretWeapon;
 
@@ -38,5 +42,10 @@ public class WeaponManager : NetworkBehaviour{
     public PlayerWeapon GetCurrentWeapon()
     {
         return curretWeapon;
+    }
+
+    public void ChangeWeaponTo()
+    {
+        
     }
 }

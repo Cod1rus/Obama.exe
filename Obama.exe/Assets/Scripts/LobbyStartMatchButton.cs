@@ -9,6 +9,8 @@ public class LobbyStartMatchButton : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        
         GameManager.ChangeSceneTo(nextmap);
+        
     }
 }

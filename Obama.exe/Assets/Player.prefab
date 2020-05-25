@@ -390,6 +390,22 @@ MonoBehaviour:
     fireRate: 0
     weaponGFX: {fileID: 1982892664874929123, guid: 6ebe9ced6260d9847bfd53d21d43fe39,
       type: 3}
+  schwererGustav:
+    name: Gustav
+    damage: 30
+    range: 100
+    recoil: 0
+    fireRate: 0
+    weaponGFX: {fileID: 7913972863216604932, guid: 82e0e2c56006ad0438a6f8e8f7f263b3,
+      type: 3}
+  automaticSniperRifle:
+    name: 50BMG Sniper Rifle
+    damage: 500
+    range: 1000
+    recoil: 0
+    fireRate: 2
+    weaponGFX: {fileID: 3847822578203148425, guid: 0546d098dbcae684babb8b6e7e15bf51,
+      type: 3}
 --- !u!1 &3608970629661800305
 GameObject:
   m_ObjectHideFlags: 0

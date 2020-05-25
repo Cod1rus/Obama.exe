@@ -36,17 +36,16 @@ public class PlayerSetup : NetworkBehaviour
             //create player UI
             playerUIInstance = Instantiate(playerUIPrefab);
             playerUIInstance.name = playerUIPrefab.name;
+            Debug.Log("created Player");
         }
 
         GetComponent<Player>().Setup();
-
         
     }
 
     public override void OnStartClient()
     {
         base.OnStartClient();
-
 
         string _netID = GetComponent<NetworkIdentity>().netId.ToString();
         Player _player = GetComponent<Player>();
@@ -75,7 +74,6 @@ public class PlayerSetup : NetworkBehaviour
         {
             sceneCamera.gameObject.SetActive(true);
         }
-        GameManager.DeRegisterPlayer(transform.name);
-       
+        GameManager.DeRegisterPlayer(transform.name);    
     }
 }

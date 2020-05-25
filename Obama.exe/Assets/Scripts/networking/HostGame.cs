@@ -45,9 +45,8 @@ public class HostGame : MonoBehaviour
             {
                 serverBrowserUI.ToggleServerBrowserUI(false);
             }
-            Debug.Log("Tach:" + lobbyScene);
 
-            SceneManager.CreateScene(lobbyScene);
+            //SceneManager.CreateScene(lobbyScene);
             GameManager.ChangeSceneTo(lobbyScene);
         }
     }

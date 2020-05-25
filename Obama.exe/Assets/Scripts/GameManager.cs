@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     public static GameManager instance;
 
@@ -29,8 +30,11 @@ public class GameManager : MonoBehaviour
 
     public static void ChangeSceneTo(string _scene)
     {
-        Debug.Log("Changed Scene to " + _scene);
+
+        SceneManager.CreateScene(_scene);
+        Debug.Log("created scene: " + _scene);
         SceneManager.LoadScene(_scene);
+        Debug.Log("Changed Scene to " + _scene);      
     }
 
     #endregion
