@@ -9,6 +9,9 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]
     GameObject crosshair;
 
+    [SerializeField]
+    GameObject ammocount;
+
     private void Start()
     {
         PauseMenu.IsOn = false;
@@ -20,6 +23,7 @@ public class PlayerUI : MonoBehaviour
         {
             TogglePauseMenu();
             ToggleCrosshair();
+            Toggleammocount();
         }
     }
     void TogglePauseMenu()
@@ -31,5 +35,10 @@ public class PlayerUI : MonoBehaviour
     void ToggleCrosshair()
     {
         crosshair.SetActive(!crosshair.activeSelf);       
+    }
+
+    void Toggleammocount()
+    {
+        ammocount.SetActive(!ammocount.activeSelf);
     }
 }
