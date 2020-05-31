@@ -14,6 +14,12 @@ public class MapManager : MonoBehaviour
     private string MAPTAG;
     [SerializeField]
     private Transform mapLocation;
+    [SerializeField]
+    private Transform spawnPoint001;
+    [SerializeField]
+    private Transform spawnPoint002;
+
+
 
     private GameObject activeMap;
     private void Start()
@@ -23,21 +29,22 @@ public class MapManager : MonoBehaviour
         activeMap = temp;
     }
 
-    public void ChangeMapTo(GameObject _map) 
+    public void ChangeMapTo(GameObject _map)
     {
-        Debug.Log("TEST2");
         ClearActiveMap();
         Instantiate<GameObject>(_map);
         activeMap = _map;
-
         Debug.Log("Map Changed to: " + _map.name);
+
+        SpawnPlayers();
+        Debug.Log("Repositioned Players");
+
     }
 
     void ClearActiveMap()
     {
         if (activeMap != null)
         {
-            Debug.Log("TEST3");
             Destroy(activeMap);
             Debug.Log("Active Map cleared out!");
         }
@@ -55,6 +62,30 @@ public class MapManager : MonoBehaviour
 
     public void GoToRandomMap()
     {
-        
+
+    }
+
+    private void SpawnPlayers()
+    {
+        bool switcherino = true;
+        //TODO: Teleport Player to Spawnpoints
+        for (int i = 0; i < GameManager.GetPlayerRegisterSize();i++)
+        {
+            int temp = i + 1;
+            string playerID = "Player " + temp;
+            if (switcherino)
+            {
+                Debug.Log(playerID);
+                GameManager.players[playerID].transform.SetPositionAndRotation(spawnPoint001.position, spawnPoint001.rotation);
+                //GameManager.getPlayer(PlayerID).transform.SetPositionAndRotation(spawnPoint001.position, spawnPoint001.rotation);
+            }
+            else if (!switcherino)
+            {
+                //GameManager.getPlayer(PlayerID).transform.SetPositionAndRotation(spawnPoint002.position, spawnPoint002.rotation);
+                GameManager.players[playerID].transform.SetPositionAndRotation(spawnPoint002.position, spawnPoint002.rotation);
+            }
+
+
+        }
     }
 }
