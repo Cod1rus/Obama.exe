@@ -23,6 +23,7 @@ public class PlayerSetup : NetworkBehaviour
         {
             DisableComponents();
             AssingRemoteLayer();
+            
         }
         else
         {
@@ -36,6 +37,7 @@ public class PlayerSetup : NetworkBehaviour
             //create player UI
             playerUIInstance = Instantiate(playerUIPrefab);
             playerUIInstance.name = playerUIPrefab.name;
+            Cursor.lockState = CursorLockMode.Locked;
             Debug.Log("created Player");
         }
 

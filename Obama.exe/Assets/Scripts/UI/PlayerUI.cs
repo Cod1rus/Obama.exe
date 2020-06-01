@@ -24,12 +24,21 @@ public class PlayerUI : MonoBehaviour
             TogglePauseMenu();
             ToggleCrosshair();
             Toggleammocount();
+
         }
     }
     void TogglePauseMenu()
     {
         pauseMenu.SetActive(!pauseMenu.activeSelf);
         PauseMenu.IsOn = pauseMenu.activeSelf;
+        if (pauseMenu.active == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else if (pauseMenu.active == false)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     void ToggleCrosshair()

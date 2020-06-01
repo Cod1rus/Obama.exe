@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class MapManager : MonoBehaviour
+public class MapManager : NetworkBehaviour
 {
     [SerializeField]
     private GameObject[] mapList;
@@ -79,18 +80,9 @@ public class MapManager : MonoBehaviour
             string playerID = "Player " + temp;
 
             //Debug.Log(playerID);
-            //if (switcherino)
-            //{
-                //GameManager.players[playerID].transform.SetPositionAndRotation(spawnPoint001.position, spawnPoint001.rotation);
-                //GameManager.getPlayer(PlayerID).transform.SetPositionAndRotation(spawnPoint001.position, spawnPoint001.rotation);
-                GameManager.getPlayer(playerID).transform.SetPositionAndRotation(temp2[i].transform.position, temp2[i].transform.rotation);
-            //}
-            //else if (!switcherino)
-            //{
-            //    //GameManager.players[playerID].transform.SetPositionAndRotation(spawnPoint002.position, spawnPoint002.rotation);
-            //    //GameManager.getPlayer(PlayerID).transform.SetPositionAndRotation(spawnPoint002.position, spawnPoint002.rotation);
 
-            //}
+            GameManager.getPlayer(playerID).transform.SetPositionAndRotation(temp2[i].transform.position, temp2[i].transform.rotation);
+  
         }
     }
 }
