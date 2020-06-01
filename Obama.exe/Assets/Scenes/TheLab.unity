@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 378168533}
   m_Layer: 0
   m_Name: SpawnPoint.001
-  m_TagString: Untagged
+  m_TagString: SPAWNPOINTS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -499,7 +499,10 @@ MonoBehaviour:
   overtimeMap: {fileID: 2239450489063590119, guid: 4c6a816e71e9d9e4ba5cff4ce96f13a7,
     type: 3}
   MAPTAG: MAP
+  SPAWNPOINTTAG: SPAWNPOINTS
   mapLocation: {fileID: 1029707985}
+  spawnPoint001: {fileID: 0}
+  spawnPoint002: {fileID: 0}
 --- !u!4 &1082048091
 Transform:
   m_ObjectHideFlags: 0
@@ -527,7 +530,7 @@ GameObject:
   - component: {fileID: 1672167929}
   m_Layer: 0
   m_Name: SpawnPoint.002
-  m_TagString: Untagged
+  m_TagString: SPAWNPOINTS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

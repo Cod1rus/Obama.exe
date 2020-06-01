@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 4555417055509976857}
   m_Layer: 0
   m_Name: Spawnpoint.Player.002
-  m_TagString: Untagged
+  m_TagString: SPAWNPOINTS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 4555417055800989115}
   m_Layer: 0
   m_Name: Spawnpoint.Player.001
-  m_TagString: Untagged
+  m_TagString: SPAWNPOINTS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

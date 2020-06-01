@@ -13,6 +13,8 @@ public class MapManager : MonoBehaviour
     [SerializeField]
     private string MAPTAG;
     [SerializeField]
+    private string SPAWNPOINTTAG;
+    [SerializeField]
     private Transform mapLocation;
     [SerializeField]
     private Transform spawnPoint001;
@@ -67,25 +69,28 @@ public class MapManager : MonoBehaviour
 
     private void SpawnPlayers()
     {
-        bool switcherino = true;
         //TODO: Teleport Player to Spawnpoints
-        for (int i = 0; i < GameManager.GetPlayerRegisterSize();i++)
+
+        bool switcherino = true;
+        GameObject[] temp2 = GameObject.FindGameObjectsWithTag(SPAWNPOINTTAG);
+        for (int i = 0; i < GameManager.GetPlayerRegisterSize(); i++)
         {
             int temp = i + 1;
             string playerID = "Player " + temp;
-            if (switcherino)
-            {
-                Debug.Log(playerID);
-                GameManager.players[playerID].transform.SetPositionAndRotation(spawnPoint001.position, spawnPoint001.rotation);
+
+            //Debug.Log(playerID);
+            //if (switcherino)
+            //{
+                //GameManager.players[playerID].transform.SetPositionAndRotation(spawnPoint001.position, spawnPoint001.rotation);
                 //GameManager.getPlayer(PlayerID).transform.SetPositionAndRotation(spawnPoint001.position, spawnPoint001.rotation);
-            }
-            else if (!switcherino)
-            {
-                //GameManager.getPlayer(PlayerID).transform.SetPositionAndRotation(spawnPoint002.position, spawnPoint002.rotation);
-                GameManager.players[playerID].transform.SetPositionAndRotation(spawnPoint002.position, spawnPoint002.rotation);
-            }
+                GameManager.getPlayer(playerID).transform.SetPositionAndRotation(temp2[i].transform.position, temp2[i].transform.rotation);
+            //}
+            //else if (!switcherino)
+            //{
+            //    //GameManager.players[playerID].transform.SetPositionAndRotation(spawnPoint002.position, spawnPoint002.rotation);
+            //    //GameManager.getPlayer(PlayerID).transform.SetPositionAndRotation(spawnPoint002.position, spawnPoint002.rotation);
 
-
+            //}
         }
     }
 }
