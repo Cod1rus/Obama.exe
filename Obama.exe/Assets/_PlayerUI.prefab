@@ -569,7 +569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 3108127500989238888}
   crosshair: {fileID: 397469432188507203}
-  ammocount: {fileID: 0}
+  ammocount: {fileID: 5076697233002193733}
 --- !u!114 &2867682608883107878
 MonoBehaviour:
   m_ObjectHideFlags: 0
