@@ -8,6 +8,7 @@ public class GameManager : NetworkBehaviour
     public static GameManager instance;
 
     public MatchSettings matchSettings;
+    //public Timer timer;
 
     private SceneManager sceneManager;
     private void Awake()
