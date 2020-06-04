@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 
+
 public class GameManager : NetworkBehaviour
 {
     public static GameManager instance;
 
     public MatchSettings matchSettings;
-    //public Timer timer;
+    [SerializeField]
+    public static Timer timer;
+
 
     private SceneManager sceneManager;
+    private static float roundTime;
     private void Awake()
     {
         if (instance != null)
@@ -22,8 +26,32 @@ public class GameManager : NetworkBehaviour
         {
             Debug.Log("Gamemanager Initalisiert!");
             instance = this;
-        }        
+        }
+        timer = this.GetComponent<Timer>();
+        roundTime = matchSettings.roundTime;
     }
+
+
+    #region Match Management
+
+
+    public static void StartMatch()
+    {
+
+    }
+
+    public static void StartRound()
+    {
+        timer.StartTimer(roundTime);
+    }
+
+    public static void StartOvertime()
+    {
+
+    }
+
+    #endregion
+
 
 
 

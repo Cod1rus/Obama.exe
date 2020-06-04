@@ -32,7 +32,8 @@ public class MapManager : NetworkBehaviour
         activeMap = temp;
     }
 
-    public void ChangeMapTo(GameObject _map)
+    [Command]
+    public void CmdChangeMapTo(GameObject _map)
     {
         ClearActiveMap();
         Instantiate<GameObject>(_map);
@@ -41,6 +42,8 @@ public class MapManager : NetworkBehaviour
 
         SpawnPlayers();
         Debug.Log("Repositioned Players");
+
+        GameManager.StartRound();
 
     }
 
@@ -55,12 +58,12 @@ public class MapManager : NetworkBehaviour
 
     public void GoToOvertime()
     {
-        ChangeMapTo(overtimeMap);
+        CmdChangeMapTo(overtimeMap);
     }
 
     public void GoToLobby()
     {
-        ChangeMapTo(lobbyMap);
+        CmdChangeMapTo(lobbyMap);
     }
 
     public void GoToRandomMap()

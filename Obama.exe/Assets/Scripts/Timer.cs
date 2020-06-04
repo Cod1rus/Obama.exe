@@ -6,20 +6,27 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     [SerializeField]
-    Text countdownUIElement;
-    [SerializeField]
-    float timeLeft = 120;
+    GameObject[] countdownUIElement;
 
+    float timeLeft = 30;
+
+    
 
     private void Update()
     {
+        countdownUIElement = GameObject.FindGameObjectsWithTag("Countdown UI");
         //TODO: make the Countdown text to format: 00:00 (minutes:seconds)
-        countdownUIElement.text = "Time remaining: " + timeLeft;
+        foreach (GameObject _text in countdownUIElement)
+        {
+            Text temp = _text.GetComponent<Text>();
+            temp.text = "Time Remaining: " + timeLeft;
+        }
     }
 
-    void StartTimer()
+    public void StartTimer(float _time)
     {
-        Debug.Log("Started Timer!");
+        timeLeft = _time;
+        Debug.Log("Started Timer!" + _time + " seconds");
         StartCoroutine(Countdown());
     }
 
@@ -31,13 +38,15 @@ public class Timer : MonoBehaviour
 
     private IEnumerator Countdown()
     {
-        if (timeLeft == 0)
-        {
-            TimerEnded();
-            yield return new WaitForSeconds(0.2f);
-        }
+
         while (true)
         {
+            if (timeLeft <= 0)
+            {
+                TimerEnded();
+                yield return new WaitForSeconds(0.2f);
+                break;
+            }
             TimeCount();
             yield return new WaitForSeconds(1);
         }

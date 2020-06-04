@@ -307,6 +307,8 @@ GameObject:
   m_Component:
   - component: {fileID: 892926100}
   - component: {fileID: 892926099}
+  - component: {fileID: 892926101}
+  - component: {fileID: 892926102}
   m_Layer: 0
   m_Name: _GameManager
   m_TagString: Untagged
@@ -328,6 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   matchSettings:
     respawnTime: 3
+    roundTime: 30
 --- !u!4 &892926100
 Transform:
   m_ObjectHideFlags: 0
@@ -342,6 +345,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &892926101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892926098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aab780f5534cf84c9e3396ac0d2d5f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownUIElement:
+  - {fileID: 0}
+--- !u!114 &892926102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892926098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1001 &1015080848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -349,20 +399,74 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1029707985}
     m_Modifications:
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i0
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i1
+      value: 83
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i2
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i3
+      value: 178
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i4
+      value: 207
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i5
+      value: 223
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i6
+      value: 204
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i7
+      value: 244
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i8
+      value: 202
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i9
+      value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i10
+      value: 117
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i11
+      value: 137
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i12
+      value: 141
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i13
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i14
+      value: 203
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015080851, guid: 235324b2cfdfccf4ca3a75898d38cb37, type: 3}
+      propertyPath: m_AssetId.i15
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 5122674252626858928, guid: 235324b2cfdfccf4ca3a75898d38cb37,
         type: 3}
       propertyPath: m_Name
       value: Lobby
-      objectReference: {fileID: 0}
-    - target: {fileID: 5122674252626858928, guid: 235324b2cfdfccf4ca3a75898d38cb37,
-        type: 3}
-      propertyPath: m_TagString
-      value: MAP
-      objectReference: {fileID: 0}
-    - target: {fileID: 5122674252626858928, guid: 235324b2cfdfccf4ca3a75898d38cb37,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5122674252626858943, guid: 235324b2cfdfccf4ca3a75898d38cb37,
         type: 3}
@@ -473,6 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1082048091}
   - component: {fileID: 1082048090}
+  - component: {fileID: 1082048092}
   m_Layer: 0
   m_Name: _MapManager
   m_TagString: Untagged
@@ -518,6 +623,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1082048092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082048089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &1672167927
 GameObject:
   m_ObjectHideFlags: 0

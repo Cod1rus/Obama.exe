@@ -12,6 +12,6 @@ public class LobbyStartMatchButton : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("TEST");
-        mapManager.ChangeMapTo(nextMap);
+        mapManager.CmdChangeMapTo(nextMap);
     }
 }

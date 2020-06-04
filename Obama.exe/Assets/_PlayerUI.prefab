@@ -533,7 +533,6 @@ GameObject:
   - component: {fileID: 8322783756993952754}
   - component: {fileID: 5488943432916974092}
   - component: {fileID: 2867682608883107878}
-  - component: {fileID: 7082066151990449119}
   m_Layer: 0
   m_Name: _PlayerUI
   m_TagString: Untagged
@@ -584,20 +583,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuScene: MainMenu
---- !u!114 &7082066151990449119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3967208176216072094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aab780f5534cf84c9e3396ac0d2d5f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countdownUIElement: {fileID: 9188329124353631635}
-  timeLeft: 120
 --- !u!1 &4246223625890355648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +997,7 @@ GameObject:
   - component: {fileID: 9188329124353631635}
   m_Layer: 0
   m_Name: Countdown
-  m_TagString: Untagged
+  m_TagString: Countdown UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1033,7 +1018,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57.5, y: 585}
+  m_AnchoredPosition: {x: -57.274826, y: 409.23788}
   m_SizeDelta: {x: 474.4, y: 48.7}
   m_Pivot: {x: 0.37811753, y: 1.0000004}
 --- !u!222 &5462470696224862340
