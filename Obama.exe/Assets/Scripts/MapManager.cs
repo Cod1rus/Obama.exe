@@ -40,7 +40,7 @@ public class MapManager : NetworkBehaviour
         activeMap = _map;
         Debug.Log("Map Changed to: " + _map.name);
 
-        SpawnPlayers();
+        CmdSpawnPlayers();
         Debug.Log("Repositioned Players");
 
         GameManager.StartRound();
@@ -71,21 +71,23 @@ public class MapManager : NetworkBehaviour
 
     }
 
-    private void SpawnPlayers()
+    [Command]
+    private void CmdSpawnPlayers()
     {
-        //TODO: Teleport Player to Spawnpoints
-
         bool switcherino = true;
         GameObject[] temp2 = GameObject.FindGameObjectsWithTag(SPAWNPOINTTAG);
-        for (int i = 0; i < GameManager.GetPlayerRegisterSize(); i++)
+        GameObject[] temp3 = GameObject.FindGameObjectsWithTag("Player");
+        Debug.Log(temp3.Length);
+        for (int i = 0; i < temp3.Length; i++)
         {
-            int temp = i + 1;
-            string playerID = "Player " + temp;
+            //int temp = i + 1;
+            //string playerID = "Player " + temp;
 
             //Debug.Log(playerID);
 
-            GameManager.getPlayer(playerID).transform.SetPositionAndRotation(temp2[i].transform.position, temp2[i].transform.rotation);
-  
+            //GameManager.getPlayer(playerID).transform.SetPositionAndRotation(temp2[i].transform.position, temp2[i].transform.rotation);
+
+            temp3[i].transform.SetPositionAndRotation(temp2[i].transform.position, temp2[i].transform.rotation);
         }
     }
 }
