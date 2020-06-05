@@ -27,7 +27,6 @@ public class MapManager : NetworkBehaviour
     private GameObject activeMap;
     private void Start()
     {
-        //TODO: Set active Map to Preplaced Lobby Prefab
         GameObject temp = GameObject.FindGameObjectWithTag(MAPTAG);
         activeMap = temp;
     }
@@ -40,7 +39,7 @@ public class MapManager : NetworkBehaviour
         activeMap = _map;
         Debug.Log("Map Changed to: " + _map.name);
 
-        CmdSpawnPlayers();
+        SpawnPlayers();
         Debug.Log("Repositioned Players");
 
         GameManager.StartRound();
@@ -71,10 +70,9 @@ public class MapManager : NetworkBehaviour
 
     }
 
-    [Command]
-    private void CmdSpawnPlayers()
+    //[ClientRpc]
+    private void SpawnPlayers()
     {
-        bool switcherino = true;
         GameObject[] temp2 = GameObject.FindGameObjectsWithTag(SPAWNPOINTTAG);
         GameObject[] temp3 = GameObject.FindGameObjectsWithTag("Player");
         Debug.Log(temp3.Length);
