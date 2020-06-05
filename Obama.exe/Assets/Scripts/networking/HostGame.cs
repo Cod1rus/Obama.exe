@@ -10,12 +10,16 @@ public class HostGame : MonoBehaviour
     ServerBrowserUI serverBrowserUI;
     [SerializeField]
     private string lobbyScene;
+    [SerializeField]
+    private GameObject lobbyMap;
 
     private string  roomName;
 
     private NetworkManager networkManager;
 
     private GameManager gameManager;
+    private MapManager mapManager;
+
 
     private void Start()
     {
@@ -48,6 +52,7 @@ public class HostGame : MonoBehaviour
 
             //SceneManager.CreateScene(lobbyScene);
             GameManager.ChangeSceneTo(lobbyScene);
+            //Instantiate<GameObject>(lobbyMap);
         }
     }
 }

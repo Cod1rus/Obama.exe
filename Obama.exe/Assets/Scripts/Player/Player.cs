@@ -44,6 +44,7 @@ public class Player : NetworkBehaviour
         }
 
         SetDefaults();
+
     }
 
     //private void Update()

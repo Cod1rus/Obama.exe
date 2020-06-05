@@ -5,12 +5,13 @@ using UnityEngine;
 public class LobbyStartMatchButton : MonoBehaviour
 {
     [SerializeField]
-    private string nextmap;
+    private GameObject nextMap;
+    [SerializeField]
+    private MapManager mapManager;
 
     private void OnCollisionEnter(Collision collision)
     {
-        
-        GameManager.ChangeSceneTo(nextmap);
-        
+        Debug.Log("TEST");
+        mapManager.CmdChangeMapTo(nextMap);
     }
 }

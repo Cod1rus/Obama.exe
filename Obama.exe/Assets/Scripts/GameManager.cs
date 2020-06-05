@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 
+
 public class GameManager : NetworkBehaviour
 {
     public static GameManager instance;
 
     public MatchSettings matchSettings;
+    [SerializeField]
+    public static Timer timer;
+
 
     private SceneManager sceneManager;
+    private static float roundTime;
     private void Awake()
     {
         if (instance != null)
@@ -21,8 +26,32 @@ public class GameManager : NetworkBehaviour
         {
             Debug.Log("Gamemanager Initalisiert!");
             instance = this;
-        }        
+        }
+        timer = this.GetComponent<Timer>();
+        roundTime = matchSettings.roundTime;
     }
+
+
+    #region Match Management
+
+
+    public static void StartMatch()
+    {
+
+    }
+
+    public static void StartRound()
+    {
+        timer.StartTimer(roundTime);
+    }
+
+    public static void StartOvertime()
+    {
+
+    }
+
+    #endregion
+
 
 
 
@@ -44,7 +73,9 @@ public class GameManager : NetworkBehaviour
 
     private const string PLAYER_ID_PREFIX = "Player ";
 
-    private static Dictionary<string, Player> players = new Dictionary<string, Player>();
+    public static Dictionary<string, Player> players = new Dictionary<string, Player>();
+
+
 
     public static void RegisterPlayer(string _netID, Player _player)
     {
@@ -52,6 +83,7 @@ public class GameManager : NetworkBehaviour
         string _playerID = PLAYER_ID_PREFIX + _netID;
         players.Add(_playerID, _player);
         _player.transform.name = _playerID;
+       
     }
 
     public static void DeRegisterPlayer(string _PlayerID)
@@ -62,6 +94,11 @@ public class GameManager : NetworkBehaviour
     public static Player getPlayer(string _playerID)
     {
         return players[_playerID];
+    }
+
+    public static int GetPlayerRegisterSize()
+    {
+        return players.Count;
     }
 
 
