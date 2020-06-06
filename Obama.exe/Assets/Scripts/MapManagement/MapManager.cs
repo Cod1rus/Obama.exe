@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class MapManager : MonoBehaviour
+using UnityEngine.Networking;
+public class MapManager : NetworkBehaviour
 {
     [SerializeField]
     private Maps lobbyMap;
@@ -9,6 +10,8 @@ public class MapManager : MonoBehaviour
     private Maps map001;
     [SerializeField]
     private Maps overtimeMap;
+    [SerializeField]
+    private string PLAYER;
 
 
     private Maps activeMap;
@@ -20,8 +23,8 @@ public class MapManager : MonoBehaviour
         this.gameObject.SetActive(true);
     }
 
-
-    public void ChangeMapTo(Maps _map)
+    [Command]
+    public void CmdChangeMapTo(Maps _map)
     {
         
         Debug.Log("Changing Map to: " + _map.name);
@@ -40,19 +43,20 @@ public class MapManager : MonoBehaviour
         Debug.Log("Changed Map to: " + _map.name);
     }
 
-    public void ChangeMapTo(string _map)
+
+    public void CmdChangeMapTo(string _map)
     {
         if (lobbyMap.name == _map)
         {
-            ChangeMapTo(lobbyMap);
+            CmdChangeMapTo(lobbyMap);
         }
         else if (overtimeMap.name == _map)
         {
-            ChangeMapTo(overtimeMap);
+            CmdChangeMapTo(overtimeMap);
         }
         else if(map001.name == _map)
         {
-            ChangeMapTo(map001);
+            CmdChangeMapTo(map001);
         }
 
     }
@@ -60,12 +64,19 @@ public class MapManager : MonoBehaviour
     private void SpawnPlayer(Transform _point1, Transform _point2)
     {
         //TOTO: Spawn Players on Right Map Prefab in Scene
+        GameObject[] temp = GameObject.FindGameObjectsWithTag(PLAYER);
 
-            Debug.Log("RECLOCATING: Player 1");
-            GameManager.getPlayer("Player 1").transform.SetPositionAndRotation(_point1.position, _point1.rotation);
+        Debug.Log("RECLOCATING: Player 1");
+        //GameManager.getPlayer("Player 1").transform.SetPositionAndRotation(_point1.position, _point1.rotation);
+        temp[0].transform.SetPositionAndRotation(_point1.position, _point1.rotation);
 
+        if (GameManager.GetPlayerRegisterSize() == 2)
+        {
             Debug.Log("RECLOCATING: Player 2");
-            GameManager.getPlayer("Player 2").transform.SetPositionAndRotation(_point2.position, _point2.rotation);
+            //GameManager.getPlayer("Player 2").transform.SetPositionAndRotation(_point2.position, _point2.rotation);
+            temp[1].transform.SetPositionAndRotation(_point2.position, _point2.rotation);
+        }
+
 
 
 
@@ -75,12 +86,12 @@ public class MapManager : MonoBehaviour
 
     public void GoToOvertime()
     {
-        ChangeMapTo(overtimeMap);
+        CmdChangeMapTo(overtimeMap);
     }
 
     public void GoToLobby()
     {
-        ChangeMapTo(lobbyMap);
+        CmdChangeMapTo(lobbyMap);
     }
 
     public void GoToRandomMap()

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField]
+
     GameObject[] countdownUIElement;
 
     float timeLeft = 30;
