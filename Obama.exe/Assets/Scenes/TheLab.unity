@@ -428,6 +428,7 @@ MonoBehaviour:
   matchSettings:
     respawnTime: 3
     roundTime: 30
+  mapManager: {fileID: 1082048089}
 --- !u!4 &892926100
 Transform:
   m_ObjectHideFlags: 0
@@ -635,6 +636,7 @@ MonoBehaviour:
     map: {fileID: 2028299615}
     spawnPoint1: {fileID: 1858171468}
     spawnPoint2: {fileID: 1638846197}
+  PLAYER: Player
 --- !u!4 &1082048091
 Transform:
   m_ObjectHideFlags: 0
@@ -681,7 +683,7 @@ MonoBehaviour:
     i13: 0
     i14: 0
     i15: 0
-  m_ServerOnly: 1
+  m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
 --- !u!4 &1638846197 stripped
 Transform:

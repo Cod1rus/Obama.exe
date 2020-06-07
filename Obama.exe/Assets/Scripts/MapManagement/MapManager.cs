@@ -37,9 +37,6 @@ public class MapManager : NetworkBehaviour
         SpawnPlayer(_map.spawnPoint1, _map.spawnPoint2);
 
 
-
-
-
         Debug.Log("Changed Map to: " + _map.name);
     }
 
@@ -67,18 +64,13 @@ public class MapManager : NetworkBehaviour
         GameObject[] temp = GameObject.FindGameObjectsWithTag(PLAYER);
 
         Debug.Log("RECLOCATING: Player 1");
-        //GameManager.getPlayer("Player 1").transform.SetPositionAndRotation(_point1.position, _point1.rotation);
         temp[0].transform.SetPositionAndRotation(_point1.position, _point1.rotation);
 
         if (GameManager.GetPlayerRegisterSize() == 2)
         {
             Debug.Log("RECLOCATING: Player 2");
-            //GameManager.getPlayer("Player 2").transform.SetPositionAndRotation(_point2.position, _point2.rotation);
             temp[1].transform.SetPositionAndRotation(_point2.position, _point2.rotation);
         }
-
-
-
 
 
         Debug.Log("Relocated Players");
