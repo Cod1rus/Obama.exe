@@ -71,7 +71,7 @@ public class Player : NetworkBehaviour
 
         currentHealth -= _amount;
         Debug.Log(transform.name + " now has " + currentHealth + " health!");
-        this.damageTaken += _amount;
+        damageTaken += _amount;
 
         if (currentHealth <= 0){
             Debug.Log(transform.name + " has Died!!");
@@ -97,12 +97,13 @@ public class Player : NetworkBehaviour
         Debug.Log(transform.name + " is DEAD");
 
         // Call Respawn (w round logic)
-        StartCoroutine(Respawn());
+        //StartCoroutine(Respawn());
+        GameManager.NextRound();
 
     }
 
 
-    private IEnumerator Respawn ()
+    public IEnumerator Respawn ()
     {
         yield return new WaitForSeconds(GameManager.instance.matchSettings.respawnTime);
         SetDefaults();

@@ -18,7 +18,7 @@ public class WeaponManager : NetworkBehaviour{
     [SerializeField]
     private PlayerWeapon schwererGustav;
     [SerializeField]
-    PlayerWeapon automaticSniperRifle;
+    private PlayerWeapon automaticSniperRifle;
 
     private PlayerWeapon curretWeapon;
 

@@ -16,79 +16,83 @@ public class MapManager : NetworkBehaviour
 
     private Maps activeMap;
 
-    
-    private void Start()
+    private void Awake()
     {
         activeMap = lobbyMap;
-        this.gameObject.SetActive(true);
     }
 
-    [Command]
-    public void CmdChangeMapTo(Maps _map)
+    [ClientRpc] //ClientRpc wird vom server objekt auf client ausgeführt
+    public void RpcChangeMapTo(Maps _map)
     {
-        
+        //TOTO: Fix Issue: that Client doesnt get the new map (wont change on Client)
         Debug.Log("Changing Map to: " + _map.name);
 
         activeMap.map.SetActive(false);
-
         activeMap = _map;
-        _map.map.SetActive(true);
-
-        SpawnPlayer(_map.spawnPoint1, _map.spawnPoint2);
-
+        _map.map.SetActive(true); //nullreferenceExeption???!!!
+        RpcSpawnPlayer(_map);
 
         Debug.Log("Changed Map to: " + _map.name);
     }
 
-
-    public void CmdChangeMapTo(string _map)
+    public void RpcChangeMapTo(string _map)
     {
         if (lobbyMap.name == _map)
         {
-            CmdChangeMapTo(lobbyMap);
+            RpcChangeMapTo(lobbyMap);
         }
         else if (overtimeMap.name == _map)
         {
-            CmdChangeMapTo(overtimeMap);
+            RpcChangeMapTo(overtimeMap);
         }
-        else if(map001.name == _map)
+        else if (map001.name == _map)
         {
-            CmdChangeMapTo(map001);
+            //Debug.Log("HELLO");
+            RpcChangeMapTo(map001);
         }
-
     }
 
-    private void SpawnPlayer(Transform _point1, Transform _point2)
+    [ClientRpc]
+    private void RpcSpawnPlayer(Maps _map)
     {
-        //TOTO: Spawn Players on Right Map Prefab in Scene
+        //TOTO: Fix Issue: that client isnt relocated
         GameObject[] temp = GameObject.FindGameObjectsWithTag(PLAYER);
+        
+        Transform _point1 = _map.spawnPoint1;
+        Transform _point2 = _map.spawnPoint2;
 
         Debug.Log("RECLOCATING: Player 1");
         temp[0].transform.SetPositionAndRotation(_point1.position, _point1.rotation);
+        Debug.Log("RECLOCATED: Player 1");
 
         if (GameManager.GetPlayerRegisterSize() == 2)
         {
             Debug.Log("RECLOCATING: Player 2");
+            Debug.Log(temp[1].name);
             temp[1].transform.SetPositionAndRotation(_point2.position, _point2.rotation);
+            Debug.Log("RECLOCATED: Player 2");
         }
-
-
-        Debug.Log("Relocated Players");
     }
 
-    public void GoToOvertime()
+    public void ResetMapDefaults()
     {
-        CmdChangeMapTo(overtimeMap);
-    }
-
-    public void GoToLobby()
-    {
-        CmdChangeMapTo(lobbyMap);
+        //TODO: set players to spawnpoints, reset spawntimers and spawns for items (reset the active Map for a new round)
+        Debug.Log("Resetting active Map to Defaults");
+        RpcSpawnPlayer(activeMap);
     }
 
     public void GoToRandomMap()
     {
 
+    }
+    public void GoToOvertime()
+    {
+        RpcChangeMapTo(overtimeMap);
+    }
+
+    public void GoToLobby()
+    {
+        RpcChangeMapTo(lobbyMap);
     }
 
     public Maps GetActiveMap()

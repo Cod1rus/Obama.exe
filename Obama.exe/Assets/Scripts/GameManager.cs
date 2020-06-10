@@ -11,7 +11,10 @@ public class GameManager : MonoBehaviour
     public MatchSettings matchSettings;
     [SerializeField]
     public static Timer timer;
-
+    [SerializeField]
+    private static MapManager mapManager;
+    [SerializeField]
+    private string overtimeMap;
 
     private SceneManager sceneManager;
     private static float roundTime;
@@ -34,26 +37,38 @@ public class GameManager : MonoBehaviour
 
     #region Match Management
 
-
+    private static int numberOfRounds = 0;
     public static void StartMatch()
     {
-
+        StartRound();
+        Debug.Log("Startet round: " + numberOfRounds);
     }
 
     public static void StartRound()
     {
+        numberOfRounds++;
         timer.StartTimer(roundTime);
     }
 
     public static void StartOvertime()
     {
+        Debug.Log("Starting Overtime");
+        mapManager.RpcChangeMapTo("Overtime");
+    }   
 
+    public static void NextRound()
+    {
+        if (numberOfRounds >= 3)
+        {
+            //TODO: Ending Match
+            Debug.Log("Ending Match because of reached roundlimit");
+        }
+        mapManager.ResetMapDefaults();
+        StartRound();
+        Debug.Log("Starting Round: " + numberOfRounds);
     }
 
     #endregion
-
-
-
 
     #region LoadScenes
 
@@ -67,8 +82,7 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
-
-
+    
     #region Player tracking
 
     private const string PLAYER_ID_PREFIX = "Player ";
