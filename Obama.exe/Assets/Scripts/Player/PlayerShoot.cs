@@ -70,7 +70,6 @@ public class PlayerShoot : NetworkBehaviour
             {
                 Debug.Log("We hit a Player (on client)");
                 CmdPlayerShot(_hit.collider.name, currentWeapon.damage);
-                player.damageDealt += currentWeapon.damage;
             } 
         }
     }

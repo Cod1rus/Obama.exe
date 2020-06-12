@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
@@ -12,6 +13,14 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]
     GameObject ammocount;
 
+    [SerializeField]
+    GameObject score;
+
+    [SerializeField]
+    GameObject deathScreen;
+
+    private int deathScreenIndex = 0;
+
     private void Start()
     {
         PauseMenu.IsOn = false;
@@ -23,10 +32,16 @@ public class PlayerUI : MonoBehaviour
         {
             TogglePauseMenu();
             ToggleCrosshair();
-            Toggleammocount();
+            ToggleAmmocount();
 
         }
+        UpdateScore();
     }
+    public void UpdateScore()
+    {
+        score.GetComponent<Text>().text = "Score: " + GameManager.getScorePlayerOne() + " : " + GameManager.getScorePlayerTwo();
+    }
+    #region TOGGEL UI
     void TogglePauseMenu()
     {
         pauseMenu.SetActive(!pauseMenu.activeSelf);
@@ -46,8 +61,25 @@ public class PlayerUI : MonoBehaviour
         crosshair.SetActive(!crosshair.activeSelf);       
     }
 
-    void Toggleammocount()
+    void ToggleAmmocount()
     {
         ammocount.SetActive(!ammocount.activeSelf);
     }
+
+    #region Toggle DeathScreen
+    public void ToggleDeathScreenOn()
+    {
+        //int temp = Random.Range(0, deathScreen.Length);
+        
+        //deathScreen[temp].SetActive(!deathScreen[temp].activeSelf);
+        //deathScreenIndex = temp;
+    }
+
+    public void ToggleDeathScreenOff()
+    {
+        //deathScreen[deathScreenIndex].SetActive(!deathScreen[deathScreenIndex].activeSelf);
+    }
+    #endregion
+
+    #endregion
 }

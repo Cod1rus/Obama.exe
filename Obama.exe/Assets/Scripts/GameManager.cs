@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
-
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
     public MatchSettings matchSettings;
+
     [SerializeField]
     private string overtimeMap;
-
+    private static int numOfPlayers = 0;
     private SceneManager sceneManager;
     private static float roundTime;
     private void Awake()
@@ -28,9 +28,33 @@ public class GameManager : MonoBehaviour
         //this.gameObject.SetActive(true);
     }
 
+    #region ScoreManagement
 
-    #region Match Management
+    private static int scorePlayerOne = 0;
 
+    private static int scorePlayerTwo = 0;
+
+
+    public static void SetScore(int _id)
+    {
+        if (_id == 1)
+        {
+            scorePlayerTwo++;
+        }
+        else if (_id == 2)
+        {
+            scorePlayerOne++;
+        }
+    }
+
+    public static int getScorePlayerOne()
+    {
+        return scorePlayerOne;
+    }
+    public static int getScorePlayerTwo()
+    {
+        return scorePlayerTwo;
+    }
 
     #endregion
 
@@ -57,10 +81,12 @@ public class GameManager : MonoBehaviour
 
     public static void RegisterPlayer(string _netID, Player _player)
     {
-        
+        numOfPlayers++;
         string _playerID = PLAYER_ID_PREFIX + _netID;
         players.Add(_playerID, _player);
         _player.transform.name = _playerID;
+
+        _player.SetID(numOfPlayers);
        
     }
 

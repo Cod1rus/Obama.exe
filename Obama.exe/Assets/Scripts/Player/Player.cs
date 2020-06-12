@@ -4,16 +4,17 @@ using System.Collections;
 
 public class Player : NetworkBehaviour
 {
-
-
     public float damageDealt = 0;
     private float damageTaken = 0;
     private float hpRecoverd = 0;
-    private int points = 0;
-
+    private int id = 9000;
+    private GameObject ui;
 
     [SyncVar]
     public bool _isDead = false;
+
+    [SerializeField]
+    private string PLAYERUINAME;
 
 
     public bool isDead
@@ -42,23 +43,23 @@ public class Player : NetworkBehaviour
         for (int i = 0; i < wasEnabled.Length; i++){
             wasEnabled[i] = disableOnDeath[i].enabled;
         }
-
+        ui = GameObject.Find(PLAYERUINAME);
         SetDefaults();
 
     }
 
-    //private void Update()
-    //{
-    //    if (!isLocalPlayer)
-    //    {
-    //        return;
-    //    }
-    //    if (Input.GetKeyDown(KeyCode.K))
-    //    {
-    //        RpcTakeDamage(999999);
-    //    }
+    private void Update()
+    {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            RpcTakeDamage(999999);
+        }
 
-    //}
+    }
 
 
 
@@ -95,8 +96,10 @@ public class Player : NetworkBehaviour
         }
 
         Debug.Log(transform.name + " is DEAD");
-
-        // Call Respawn (w round logic)
+        GameManager.SetScore(id);
+      
+        Debug.Log(ui.name);
+        ui.GetComponent<PlayerUI>().ToggleDeathScreenOn();//
         StartCoroutine(Respawn());
     }
 
@@ -108,6 +111,9 @@ public class Player : NetworkBehaviour
         Transform _spawnPoint = NetworkManager.singleton.GetStartPosition();
         transform.position = _spawnPoint.position;
         transform.rotation = _spawnPoint.rotation;
+
+        ui.GetComponent<PlayerUI>().ToggleDeathScreenOff();//
+
         Debug.Log("Respawned: " + transform.name);
     }
 
@@ -129,5 +135,11 @@ public class Player : NetworkBehaviour
         {
             _col.enabled = true;
         }
+    }
+
+    public void SetID(int _id)
+    {
+        id = _id;
+        Debug.Log("ID SET TO: " + id);
     }
 }
