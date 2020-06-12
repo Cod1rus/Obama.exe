@@ -18,7 +18,6 @@ public class HostGame : MonoBehaviour
     private NetworkManager networkManager;
 
     private GameManager gameManager;
-    private MapManager mapManager;
 
 
     private void Start()

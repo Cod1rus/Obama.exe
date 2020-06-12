@@ -7,6 +7,7 @@ TagManager:
   - MAP
   - SPAWNPOINTS
   - Countdown UI
+  - Mapmanager
   layers:
   - Default
   - TransparentFX

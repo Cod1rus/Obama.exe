@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
-using UnityEngine.Networking;
 
 
 public class GameManager : MonoBehaviour
@@ -9,10 +8,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public MatchSettings matchSettings;
-    [SerializeField]
-    public static Timer timer;
-    [SerializeField]
-    private static MapManager mapManager;
     [SerializeField]
     private string overtimeMap;
 
@@ -30,43 +25,12 @@ public class GameManager : MonoBehaviour
             Debug.Log("Gamemanager Initalisiert!");
             instance = this;
         }
-        timer = this.GetComponent<Timer>();
-        roundTime = matchSettings.roundTime;
+        //this.gameObject.SetActive(true);
     }
 
 
     #region Match Management
 
-    private static int numberOfRounds = 0;
-    public static void StartMatch()
-    {
-        StartRound();
-        Debug.Log("Startet round: " + numberOfRounds);
-    }
-
-    public static void StartRound()
-    {
-        numberOfRounds++;
-        timer.StartTimer(roundTime);
-    }
-
-    public static void StartOvertime()
-    {
-        Debug.Log("Starting Overtime");
-        mapManager.RpcChangeMapTo("Overtime");
-    }   
-
-    public static void NextRound()
-    {
-        if (numberOfRounds >= 3)
-        {
-            //TODO: Ending Match
-            Debug.Log("Ending Match because of reached roundlimit");
-        }
-        mapManager.ResetMapDefaults();
-        StartRound();
-        Debug.Log("Starting Round: " + numberOfRounds);
-    }
 
     #endregion
 

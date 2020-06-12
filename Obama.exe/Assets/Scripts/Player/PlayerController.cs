@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     private float speed = 10f;
     [SerializeField]
     private float MouseSensitivity = 200;
-    [SerializeField]
-    private float JumpHeight = 4;
+    //[SerializeField]
+    //private float JumpHeight = 4;
     [SerializeField]
     private Rigidbody rb;
 
@@ -67,17 +67,17 @@ public class PlayerController : MonoBehaviour
 
         Motor.RotateCamera(_cameraRotation);
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
+        //if (Input.GetButtonDown("Jump") && IsGrounded())
+        //{
            
-            Motor.PerformJump(JumpHeight);
+        //    Motor.PerformJump(JumpHeight);
             
-        }
+        //}
     }
 
-    bool IsGrounded()
-    {
-        return Physics.Raycast(rb.position, -Vector3.up, distToGround +0,1 );
-    }
+    //bool IsGrounded()
+    //{
+    //    return Physics.Raycast(rb.position, -Vector3.up, distToGround +0,1 );
+    //}
     #endregion
 }
