@@ -17,7 +17,11 @@ public class PlayerUI : MonoBehaviour
     GameObject score;
 
     [SerializeField]
-    GameObject deathScreen;
+    GameObject [] deathScreen;
+
+    GameObject activeDeathScreen;
+
+
 
     private int deathScreenIndex = 0;
 
@@ -69,15 +73,15 @@ public class PlayerUI : MonoBehaviour
     #region Toggle DeathScreen
     public void ToggleDeathScreenOn()
     {
-        //int temp = Random.Range(0, deathScreen.Length);
-        
-        //deathScreen[temp].SetActive(!deathScreen[temp].activeSelf);
-        //deathScreenIndex = temp;
+        int temp = Random.Range(0, deathScreen.Length);
+
+        deathScreen[temp].SetActive(!deathScreen[temp].activeSelf);
+        deathScreenIndex = temp;      
     }
 
     public void ToggleDeathScreenOff()
     {
-        //deathScreen[deathScreenIndex].SetActive(!deathScreen[deathScreenIndex].activeSelf);
+        deathScreen[deathScreenIndex].SetActive(!deathScreen[deathScreenIndex].activeSelf);
     }
     #endregion
 

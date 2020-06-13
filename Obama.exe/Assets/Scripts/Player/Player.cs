@@ -8,13 +8,11 @@ public class Player : NetworkBehaviour
     private float damageTaken = 0;
     private float hpRecoverd = 0;
     private int id = 9000;
+
     private GameObject ui;
 
     [SyncVar]
     public bool _isDead = false;
-
-    [SerializeField]
-    private string PLAYERUINAME;
 
 
     public bool isDead
@@ -43,7 +41,7 @@ public class Player : NetworkBehaviour
         for (int i = 0; i < wasEnabled.Length; i++){
             wasEnabled[i] = disableOnDeath[i].enabled;
         }
-        ui = GameObject.Find(PLAYERUINAME);
+        //ui = GameObject.Find(PLAYERUINAME);
         SetDefaults();
 
     }
@@ -97,9 +95,10 @@ public class Player : NetworkBehaviour
 
         Debug.Log(transform.name + " is DEAD");
         GameManager.SetScore(id);
-      
-        Debug.Log(ui.name);
-        ui.GetComponent<PlayerUI>().ToggleDeathScreenOn();//
+
+        ui.GetComponent<PlayerUI>().ToggleDeathScreenOn();
+
+
         StartCoroutine(Respawn());
     }
 
@@ -114,7 +113,13 @@ public class Player : NetworkBehaviour
 
         ui.GetComponent<PlayerUI>().ToggleDeathScreenOff();//
 
+
         Debug.Log("Respawned: " + transform.name);
+    }
+
+    public void SetPlayerUiRefernce(GameObject _ui)
+    {
+        ui = _ui;
     }
 
 

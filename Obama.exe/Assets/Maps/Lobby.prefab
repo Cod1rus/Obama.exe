@@ -310,7 +310,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JumpForce: 30
-  jumpPoints: []
+  jumpPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!65 &5122674252077801796
 BoxCollider:
   m_ObjectHideFlags: 0
