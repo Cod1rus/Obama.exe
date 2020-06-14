@@ -10,6 +10,7 @@ TagManager:
   - Mapmanager
   - DEATHSCREENS
   - PLAYERUINAME
+  - ITEMSPAWNPOINTS
   layers:
   - Default
   - TransparentFX

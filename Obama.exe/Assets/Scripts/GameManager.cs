@@ -10,6 +10,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private string overtimeMap;
+    [SerializeField]
+    private GameObject[] powerUps;
+    [SerializeField]
+    private GameObject [] weapons;
+
+
+
+
     private static int numOfPlayers = 0;
     private SceneManager sceneManager;
     private static float roundTime;
@@ -123,6 +131,36 @@ public class GameManager : MonoBehaviour
     //    GUILayout.EndVertical();
     //    GUILayout.EndArea();
     //}
+    #endregion
+
+    #region Weapon & Item Spawning
+
+    private void SpawnItem()
+    {
+        //TODO: Spawn random Powerup
+        int temp = Random.Range(0,powerUps.Length);
+    }
+
+    private void SpawnWeapon()
+    {
+        //TODO: Spawn Random Weapon
+        int temp = Random.Range(0,weapons.Length);
+
+    }
+
+    public void SpawnWeaponPowerup()
+    {
+        float temp = Random.Range(0, 1);
+        if (temp <= 0.8f)
+        {
+            SpawnWeapon();
+        }
+        else if (temp > 0.8f)
+        {
+            SpawnItem();
+        }
+    }
+
     #endregion
 
 }

@@ -56,7 +56,6 @@ public class Player : NetworkBehaviour
         {
             RpcTakeDamage(999999);
         }
-
     }
 
 
@@ -146,5 +145,10 @@ public class Player : NetworkBehaviour
     {
         id = _id;
         Debug.Log("ID SET TO: " + id);
+    }
+
+    public void PickUpItem()
+    {
+
     }
 }
