@@ -8,6 +8,9 @@ TagManager:
   - SPAWNPOINTS
   - Countdown UI
   - Mapmanager
+  - DEATHSCREENS
+  - PLAYERUINAME
+  - ITEMSPAWNPOINTS
   layers:
   - Default
   - TransparentFX

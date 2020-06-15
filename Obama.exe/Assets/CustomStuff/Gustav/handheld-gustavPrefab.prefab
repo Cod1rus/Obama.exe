@@ -449,7 +449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6597577446647506199}
   m_Layer: 0
-  m_Name: handheld-gustav
+  m_Name: handheld-gustavPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
