@@ -196,7 +196,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   MouseSensitivity: 10
-  JumpHeight: 15
   rb: {fileID: 6086580244660465781}
 --- !u!114 &5810096419774358545
 MonoBehaviour:
@@ -322,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageDealt: 0
+  _isDead: 0
   maxHealth: 100
   disableOnDeath:
   - {fileID: 989327508722852858}
@@ -384,7 +384,7 @@ MonoBehaviour:
       type: 3}
   bonkMaster9000:
     name: Bonk Master 9000
-    damage: 9000
+    damage: 69
     range: 3
     recoil: 0
     fireRate: 0
