@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
     private GameObject mainmenu;
     [SerializeField]
     private GameObject serverBrowser;
+    [SerializeField]
+    private GameObject options;
 
     public void PlayGame()
     {
@@ -25,5 +27,7 @@ public class MainMenu : MonoBehaviour
     public void CallOptionsMenu()
     {
         Debug.Log("Options Menu Called");
+        mainmenu.SetActive(!mainmenu.activeSelf);
+        options.SetActive(!options.activeSelf);
     }
 }
