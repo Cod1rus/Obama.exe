@@ -32,21 +32,26 @@ public class WeaponManager : NetworkBehaviour{
         Debug.Log("Equipping Weapon: " + _weapon.name);
 
         curretWeapon = _weapon;
-        GameObject _weapinIns = Instantiate(_weapon.weaponGFX, weaponHolder.position, weaponHolder.rotation);
-        _weapinIns.transform.SetParent(weaponHolder);
 
-        if (isLocalPlayer)
-        {
-            _weapinIns.layer = LayerMask.NameToLayer(weaponLayerName);
-        }
+        _weapon.weaponGFX.SetActive(!_weapon.weaponGFX.activeSelf);
+        //GameObject _weapinIns = Instantiate(_weapon.weaponGFX, weaponHolder.position, weaponHolder.rotation);
+        //_weapinIns.transform.SetParent(weaponHolder);
+
+        //if (isLocalPlayer)
+        //{
+        //    _weapinIns.layer = LayerMask.NameToLayer(weaponLayerName);
+        //}
+
+
     }
 
     private void UnequipCurrentWeapon()
     {
-        PlayerWeapon temp = curretWeapon;
-        curretWeapon = null;
-        //TODO: Clean up old weapon to change to an new one
-        Destroy(temp.weaponGFX);
+        //PlayerWeapon temp = curretWeapon;
+        //curretWeapon = null;
+        ////TODO: Clean up old weapon to change to an new one
+        //Destroy(temp.weaponGFX);
+        curretWeapon.weaponGFX.SetActive(!curretWeapon.weaponGFX.activeSelf);
 
     }
 

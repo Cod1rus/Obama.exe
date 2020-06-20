@@ -80,7 +80,6 @@ public class PlayerShoot : NetworkBehaviour
         Debug.Log(_PlayerID + "Got his face ripped");
 
         Player _player = GameManager.getPlayer(_PlayerID);
-        _player.RpcTakeDamage(_damage);
-      
+        _player.RpcTakeDamage(_damage);    
     }
 }
