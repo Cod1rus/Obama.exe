@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         //this.gameObject.SetActive(true);
     }
 
+
     #region ScoreManagement
 
     private static int scorePlayerOne = 0;

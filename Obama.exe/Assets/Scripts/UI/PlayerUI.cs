@@ -17,7 +17,7 @@ public class PlayerUI : MonoBehaviour
     GameObject score;
 
     [SerializeField]
-    GameObject [] deathScreen;
+    GameObject[] deathScreen;
 
     GameObject activeDeathScreen;
 
@@ -40,10 +40,15 @@ public class PlayerUI : MonoBehaviour
 
         }
         UpdateScore();
+        //UpdateAmmocount();
     }
     public void UpdateScore()
     {
         score.GetComponent<Text>().text = "Score: " + GameManager.getScorePlayerOne() + " : " + GameManager.getScorePlayerTwo();
+    }
+
+    void UpdateAmmocount(){
+        ammocount.GetComponent<Text>().text = "Ammunition: ";
     }
     #region TOGGEL UI
     void TogglePauseMenu()
