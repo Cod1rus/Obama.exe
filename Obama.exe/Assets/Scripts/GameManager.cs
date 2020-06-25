@@ -56,11 +56,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static int getScorePlayerOne()
+    public static int GetScorePlayerOne()
     {
         return scorePlayerOne;
     }
-    public static int getScorePlayerTwo()
+    public static int GetScorePlayerTwo()
     {
         return scorePlayerTwo;
     }
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
         players.Remove(_PlayerID);
     }
 
-    public static Player getPlayer(string _playerID)
+    public static Player GetPlayer(string _playerID)
     {
         return players[_playerID];
     }

@@ -44,7 +44,7 @@ public class PlayerUI : MonoBehaviour
     }
     public void UpdateScore()
     {
-        score.GetComponent<Text>().text = "Score: " + GameManager.getScorePlayerOne() + " : " + GameManager.getScorePlayerTwo();
+        score.GetComponent<Text>().text = "Score: " + GameManager.GetScorePlayerOne() + " : " + GameManager.GetScorePlayerTwo();
     }
 
     void UpdateAmmocount(){
