@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6132860950058782712}
   - component: {fileID: 2902370078099076558}
   - component: {fileID: 8897920298018048311}
+  - component: {fileID: 1519769950}
+  - component: {fileID: 814043269}
   m_Layer: 0
   m_Name: Obamium
   m_TagString: Untagged
@@ -79,3 +81,35 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1519769950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153709977692585451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e17adbdf6befc448dce1cef34388dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  X_Achse: 0
+  Y_Achse: 0
+  Z_Achse: 1
+  m_drehsbeve: 10
+--- !u!114 &814043269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153709977692585451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e17adbdf6befc448dce1cef34388dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  X_Achse: 0
+  Y_Achse: 0
+  Z_Achse: 1
+  m_drehsbeve: 10
