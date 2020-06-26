@@ -11,17 +11,17 @@ public class ItemSpawn : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         float temp = Random.Range(0,1);
-        if (temp <= 0.8f)
-        {
-            int temp1 = Random.Range(0, weapons.Length);
+        //if (temp <= 0.8f)
+        //{
             if (collision.transform.tag == "Player")
             {
-                collision.transform.GetComponent<WeaponManager>().ChangeWeaponTo(weapons[temp1]);
+                //collision.transform.GetComponent<WeaponManager>().ChangeWeaponTo(weapons[temp1]);
+                collision.transform.GetComponent<WeaponManager>().RpcChangeToRandomWeapon();
             }
-        }
-        else if(temp > 0.8f){
+        //}
+        //else if(temp > 0.8f){
             //TODO: Give Player Powerup
-            Debug.Log("Player get Power Up");
-        }
+        //    Debug.Log("Player get Power Up");
+        //}
     }
 }

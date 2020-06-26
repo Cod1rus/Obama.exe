@@ -289,49 +289,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponLayerName: Weapon
-  weaponHolder: {fileID: 213222294}
-  primaryWeapon:
-    name: Heavy LMG
+  playerWeapon:
+  - name: Heavy LMG
     damage: 10
     range: 200
     recoil: 0
     fireRate: 10
     weaponGFX: {fileID: 7057336605279869969}
-  wirstBreaker:
-    name: HexaRegret
+    id: 0
+  - name: HexaRegret
     damage: 90
     range: 100
     recoil: 0
     fireRate: 0
     weaponGFX: {fileID: 6244656414667314680}
-  rpg:
-    name: Wendler Gun
+    id: 0
+  - name: Wendler Gun
     damage: 30
     range: 400
     recoil: 0
     fireRate: 0
     weaponGFX: {fileID: 3862995286477002386}
-  bonkMaster9000:
-    name: Bonk Master 9000
+    id: 0
+  - name: Bonk Master 69
     damage: 69
     range: 3
     recoil: 0
     fireRate: 0
     weaponGFX: {fileID: 4575067167435102473}
-  schwererGustav:
-    name: Gustav
+    id: 0
+  - name: Gustav
     damage: 30
     range: 100
     recoil: 0
     fireRate: 0
     weaponGFX: {fileID: 1252552398660691247}
-  automaticSniperRifle:
-    name: 50BMG Sniper Rifle
+    id: 0
+  - name: 50BMG Sniper Rifle
     damage: 500
     range: 1000
     recoil: 0
     fireRate: 2
     weaponGFX: {fileID: 5325801330304754637}
+    id: 0
+  startWeaponID: 0
 --- !u!95 &-7061202819477904213
 Animator:
   serializedVersion: 3

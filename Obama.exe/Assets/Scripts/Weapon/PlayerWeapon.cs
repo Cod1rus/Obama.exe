@@ -14,4 +14,6 @@ public class PlayerWeapon
 
     public GameObject weaponGFX;
 
+    public int id;
+
 }
