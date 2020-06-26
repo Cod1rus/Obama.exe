@@ -38,6 +38,45 @@ public class WeaponManager : NetworkBehaviour{
         EquipWeapon(startWeaponID);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Keypad0))
+        {
+            UnequipCurrentWeapon();
+            EquipWeapon(0);
+        }
+        else if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            UnequipCurrentWeapon();
+            EquipWeapon(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            UnequipCurrentWeapon();
+            EquipWeapon(2);
+        }
+        else if (Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            UnequipCurrentWeapon();
+            EquipWeapon(3);
+        }
+        else if (Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            UnequipCurrentWeapon();
+            EquipWeapon(4);
+        }
+        else if (Input.GetKeyDown(KeyCode.Keypad5))
+        {
+            UnequipCurrentWeapon();
+            EquipWeapon(5);
+        }
+        //else if (Input.GetKeyDown(KeyCode.Keypad6))
+        //{
+        //    UnequipCurrentWeapon();
+        //    EquipWeapon(6);
+        //}
+    }
+
 
 
     void EquipWeapon(PlayerWeapon _weapon)
@@ -59,7 +98,7 @@ public class WeaponManager : NetworkBehaviour{
 
 
     }
-    void EquipWeapon(int _weaponID)
+    public void EquipWeapon(int _weaponID)
     {
         currentWeaponID = _weaponID;
         playerWeapon[_weaponID].weaponGFX.SetActive(!playerWeapon[_weaponID].weaponGFX.activeSelf);
