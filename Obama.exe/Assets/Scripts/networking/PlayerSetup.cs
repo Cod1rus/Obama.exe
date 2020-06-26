@@ -9,6 +9,11 @@ public class PlayerSetup : NetworkBehaviour
 
     [SerializeField]
     string remoteLayername = "RemotePlayer";
+    [SerializeField]
+    string playerGFXLocalLayer = "PlayerGFXLayer";
+
+    [SerializeField]
+    private Transform playerGFXLocal;
 
     [SerializeField]
     private GameObject playerUIPrefab;
@@ -33,6 +38,8 @@ public class PlayerSetup : NetworkBehaviour
             {
                 sceneCamera.gameObject.SetActive(false);
             }
+
+            playerGFXLocal.gameObject.layer = LayerMask.NameToLayer(playerGFXLocalLayer);
 
             //create player UI
             playerUIInstance = Instantiate(playerUIPrefab);

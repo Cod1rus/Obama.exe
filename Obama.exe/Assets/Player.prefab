@@ -160,6 +160,8 @@ MonoBehaviour:
   - {fileID: 523384014113270650}
   - {fileID: 2330586403735025720}
   remoteLayername: RemotePlayer
+  playerGFXLocalLayer: PlayerGFXLayer
+  playerGFXLocal: {fileID: 2126511143818220575}
   playerUIPrefab: {fileID: 3967208176216072094, guid: 0bd45f906e7c8b74ebbfa3ab7217de17,
     type: 3}
 --- !u!114 &3031562432408053575
@@ -1403,6 +1405,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 5133913965574556032, guid: 5eacec19497f53f40ac02d41c53b6e66,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6067680952061921861, guid: 5eacec19497f53f40ac02d41c53b6e66,
         type: 3}
       propertyPath: m_Layer
@@ -1443,6 +1450,12 @@ PrefabInstance:
 --- !u!4 &1559792527186989756 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5eacec19497f53f40ac02d41c53b6e66,
+    type: 3}
+  m_PrefabInstance: {fileID: 5827600487994866086}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2126511143818220575 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5574657383665397177, guid: 5eacec19497f53f40ac02d41c53b6e66,
     type: 3}
   m_PrefabInstance: {fileID: 5827600487994866086}
   m_PrefabAsset: {fileID: 0}
