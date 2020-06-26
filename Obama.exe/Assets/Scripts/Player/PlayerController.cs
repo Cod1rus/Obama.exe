@@ -67,12 +67,7 @@ public class PlayerController : MonoBehaviour
 
         Motor.RotateCamera(_cameraRotation);
 
-        //if (Input.GetButtonDown("Jump") && IsGrounded())
-        //{
-           
-        //    Motor.PerformJump(JumpHeight);
-            
-        //}
+
     }
 
     //bool IsGrounded()
