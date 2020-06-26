@@ -16,7 +16,7 @@ public class ItemSpawn : MonoBehaviour
             if (collision.transform.tag == "Player")
             {
                 //collision.transform.GetComponent<WeaponManager>().ChangeWeaponTo(weapons[temp1]);
-                collision.transform.GetComponent<WeaponManager>().RpcChangeToRandomWeapon();
+                collision.transform.GetComponent<WeaponManager>().ChangeToRandomWeapon();
             }
         //}
         //else if(temp > 0.8f){

@@ -26,7 +26,7 @@ public class WeaponManager : NetworkBehaviour{
 
     private PlayerWeapon curretWeapon;
 
-    [SyncVar]
+    //[SyncVar]
     private int currentWeaponID;
 
     [SerializeField]
@@ -111,7 +111,7 @@ public class WeaponManager : NetworkBehaviour{
     //}
     
 
-    public void RpcChangeToRandomWeapon()
+    public void ChangeToRandomWeapon()
     {
         UnequipCurrentWeapon();
         
