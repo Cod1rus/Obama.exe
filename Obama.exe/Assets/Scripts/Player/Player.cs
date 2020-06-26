@@ -28,6 +28,8 @@ public class Player : NetworkBehaviour
     private int maxHealth = 100;
     [SerializeField]
     private Behaviour[] disableOnDeath;
+    [SerializeField]
+    private Collider collider;
 
     private bool[] wasEnabled;
 
@@ -86,10 +88,11 @@ public class Player : NetworkBehaviour
         {
             disableOnDeath[i].enabled = false;
         }
-        Collider _col = GetComponent<Collider>();//sollten wir mehr Collider brauchen MUSS das umgeschrieben werden!!!!!!! (bitte melden falls der Fall)
-        if (_col != null)
+        //Collider _col = GetComponent<Collider>();//sollten wir mehr Collider brauchen MUSS das umgeschrieben werden!!!!!!! (bitte melden falls der Fall)
+        if (collider != null)
         {
-            _col.enabled = false;
+            // _col.enabled = false;
+            collider.enabled = false;
         }
 
         Debug.Log(transform.name + " is DEAD");
@@ -134,10 +137,10 @@ public class Player : NetworkBehaviour
         }
 
         // der Collider muss seperat gehandled werden da Collider nicht von Behaviour erbt!!!
-        Collider _col = GetComponent<Collider>();//sollten wir mehr Collider brauchen MUSS das umgeschrieben werden!!!!!!! (bitte melden falls der Fall)
-        if (_col != null)
+        //Collider _col = GetComponent<Collider>();//sollten wir mehr Collider brauchen MUSS das umgeschrieben werden!!!!!!! (bitte melden falls der Fall)
+        if (collider != null)
         {
-            _col.enabled = true;
+            collider.enabled = true;
         }
     }
 

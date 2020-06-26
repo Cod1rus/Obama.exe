@@ -28,11 +28,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 659423859754363674}
-  - {fileID: 5399455855730376835}
+  - {fileID: 1252552398660691320}
   - {fileID: 6317401943161941506}
   - {fileID: 6985681381913978859}
   - {fileID: 272261507707741313}
-  - {fileID: 5392044539903873522}
+  - {fileID: 5325801330304754592}
   m_Father: {fileID: 2884783803081223810}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -258,6 +258,7 @@ MonoBehaviour:
   - {fileID: 989327508722852858}
   - {fileID: 1301677630073769162}
   - {fileID: 5810096419774358545}
+  collider: {fileID: 5730695154468500632}
 --- !u!114 &1301677630073769162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,14 +324,14 @@ MonoBehaviour:
     range: 100
     recoil: 0
     fireRate: 0
-    weaponGFX: {fileID: 8986336737431171728}
+    weaponGFX: {fileID: 1252552398660691247}
   automaticSniperRifle:
     name: 50BMG Sniper Rifle
     damage: 500
     range: 1000
     recoil: 0
     fireRate: 2
-    weaponGFX: {fileID: 8975456526812111841}
+    weaponGFX: {fileID: 5325801330304754637}
 --- !u!95 &-7061202819477904213
 Animator:
   serializedVersion: 3
@@ -501,7 +502,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1847
+    m_Bits: 14135
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -742,13 +743,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82e0e2c56006ad0438a6f8e8f7f263b3, type: 3}
---- !u!4 &5399455855730376835 stripped
+--- !u!4 &1252552398660691320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6597577446647506199, guid: 82e0e2c56006ad0438a6f8e8f7f263b3,
     type: 3}
   m_PrefabInstance: {fileID: 1252552398660691348}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8986336737431171728 stripped
+--- !u!1 &1252552398660691247 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7913972863216604932, guid: 82e0e2c56006ad0438a6f8e8f7f263b3,
     type: 3}
@@ -1131,13 +1132,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0546d098dbcae684babb8b6e7e15bf51, type: 3}
---- !u!1 &8975456526812111841 stripped
+--- !u!1 &5325801330304754637 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3847822578203148425, guid: 0546d098dbcae684babb8b6e7e15bf51,
     type: 3}
   m_PrefabInstance: {fileID: 5325801330304754536}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &5392044539903873522 stripped
+--- !u!4 &5325801330304754592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 233465795283268250, guid: 0546d098dbcae684babb8b6e7e15bf51,
     type: 3}
