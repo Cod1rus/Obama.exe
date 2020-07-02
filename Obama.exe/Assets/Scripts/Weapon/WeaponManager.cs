@@ -5,20 +5,6 @@ public class WeaponManager : NetworkBehaviour{
 
     [SerializeField]
     private string weaponLayerName = "Weapon";
-    //[SerializeField]
-    //private Transform weaponHolder;
-    //[SerializeField]
-    //private PlayerWeapon primaryWeapon;
-    //[SerializeField]
-    //private PlayerWeapon wirstBreaker;
-    //[SerializeField]
-    //private PlayerWeapon rpg;
-    //[SerializeField]
-    //private PlayerWeapon bonkMaster9000;
-    //[SerializeField]
-    //private PlayerWeapon schwererGustav;
-    //[SerializeField]
-    //private PlayerWeapon automaticSniperRifle;
 
     [SerializeField]
     private  PlayerWeapon[] playerWeapon;
@@ -26,7 +12,7 @@ public class WeaponManager : NetworkBehaviour{
 
     private PlayerWeapon curretWeapon;
 
-    //[SyncVar]
+
     private int currentWeaponID;
 
     [SerializeField]
@@ -77,8 +63,7 @@ public class WeaponManager : NetworkBehaviour{
             //    UnequipCurrentWeapon();
             //    EquipWeapon(6);
             //}
-        }
-
+        } //Debug Waffenwechsel
     }
 
 
@@ -115,7 +100,6 @@ public class WeaponManager : NetworkBehaviour{
         //curretWeapon = null;
         //Destroy(temp.weaponGFX);
         curretWeapon.weaponGFX.SetActive(!curretWeapon.weaponGFX.activeSelf);
-
 
     }
 
